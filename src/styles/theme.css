@@ -1,0 +1,88 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   COLOR THEMES
+   Every color on the site comes from these variables. To tweak a theme, change
+   the values below. To change which theme loads first, edit DEFAULT_THEME in
+   src/lib/theme.ts.
+
+   Text colors are deliberately soft (off-white on dark, deep slate on light)
+   so they're easy to read without glaring.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Graphite: dark neutral (default) */
+:root,
+[data-theme='graphite'] {
+  --bg: #15171a;
+  --bg-raised: #1a1d21;
+  --surface: #1f2226;
+  --surface-hover: #252930;
+  --border: #2d3138;
+  --border-strong: #3c424b;
+
+  --heading: #e8eaed;
+  --text: #cdd1d6;
+  --text-muted: #959ca6;
+  --text-faint: #6c737d;
+
+  --accent: #8cb8e6;
+  --accent-hover: #a8caee;
+  --accent-ink: #10161d; /* text on top of an accent-colored button */
+  --accent-soft: rgba(140, 184, 230, 0.12);
+
+  --nav-bg: rgba(21, 23, 26, 0.84);
+  --grid-line: rgba(255, 255, 255, 0.035);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --overlay: rgba(8, 9, 11, 0.92);
+  color-scheme: dark;
+}
+
+/* Midnight: dark blue-gray */
+[data-theme='midnight'] {
+  --bg: #0f1620;
+  --bg-raised: #131c28;
+  --surface: #17212e;
+  --surface-hover: #1d2938;
+  --border: #243143;
+  --border-strong: #324257;
+
+  --heading: #e4ebf2;
+  --text: #c9d3de;
+  --text-muted: #8d9bab;
+  --text-faint: #64738a;
+
+  --accent: #7db7ec;
+  --accent-hover: #9cc9f2;
+  --accent-ink: #0b1520;
+  --accent-soft: rgba(125, 183, 236, 0.13);
+
+  --nav-bg: rgba(15, 22, 32, 0.84);
+  --grid-line: rgba(160, 200, 255, 0.045);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --overlay: rgba(6, 10, 16, 0.93);
+  color-scheme: dark;
+}
+
+/* Sky: soft light blue */
+[data-theme='sky'] {
+  --bg: #e7eff8;
+  --bg-raised: #edf3fa;
+  --surface: #f4f8fc;
+  --surface-hover: #fbfdff;
+  --border: #ccd9e7;
+  --border-strong: #b3c5d9;
+
+  --heading: #15212e;
+  --text: #283646;
+  --text-muted: #506174;
+  --text-faint: #75869a;
+
+  --accent: #1d65a8;
+  --accent-hover: #164f86;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(29, 101, 168, 0.1);
+
+  --nav-bg: rgba(231, 239, 248, 0.86);
+  --grid-line: rgba(29, 101, 168, 0.06);
+  --shadow: 0 10px 30px rgba(30, 60, 100, 0.12);
+  --overlay: rgba(14, 24, 36, 0.9);
+  color-scheme: light;
+}

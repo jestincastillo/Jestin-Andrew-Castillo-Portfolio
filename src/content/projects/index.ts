@@ -20,7 +20,7 @@ import neurotech from './neurotech'
 // the "Industry Experience" menu; everything else shows under "Projects".
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const projects: Project[] = [baja, enable, neurotech, agentic]
+export const projects: Project[] = [neurotech, baja, enable, agentic]
 
 /** Shown under the Industry Experience list. Set to '' to hide it. */
 export const industryMoreNote = 'More to come…'

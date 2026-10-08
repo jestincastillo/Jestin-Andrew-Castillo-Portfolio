@@ -1,50 +1,36 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
+import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { profile } from '../content/profile'
-import { projects } from '../content/projects'
+import { designProjects, industryExperience, industryMoreNote } from '../content/projects'
+import { projectPath } from '../lib/paths'
+import type { Project } from '../types'
 import Icon from './Icon'
 import ThemeSwitcher from './ThemeSwitcher'
 import './Navbar.css'
 
+const linkClass = ({ isActive }: { isActive: boolean }) => `nav__link ${isActive ? 'is-active' : ''}`
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [dropdownOpen, setDropdownOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation()
 
-  // Close any open menu after navigating to a new page.
+  // Close the mobile menu after navigating to a new page.
   useEffect(() => {
     setMobileOpen(false)
-    setDropdownOpen(false)
   }, [pathname])
 
-  // Close menus on Escape, and the dropdown when clicking anywhere outside it.
+  // Close the mobile menu on Escape.
   useEffect(() => {
-    if (!dropdownOpen && !mobileOpen) return
-    const onPointerDown = (e: PointerEvent) => {
-      if (!dropdownRef.current?.contains(e.target as Node)) setDropdownOpen(false)
-    }
+    if (!mobileOpen) return
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setDropdownOpen(false)
-        setMobileOpen(false)
-      }
+      if (e.key === 'Escape') setMobileOpen(false)
     }
-    document.addEventListener('pointerdown', onPointerDown)
     document.addEventListener('keydown', onKey)
-    return () => {
-      document.removeEventListener('pointerdown', onPointerDown)
-      document.removeEventListener('keydown', onKey)
-    }
-  }, [dropdownOpen, mobileOpen])
+    return () => document.removeEventListener('keydown', onKey)
+  }, [mobileOpen])
 
-  // Open on hover for mouse users; touch and keyboard users use the arrow button.
-  const hover = (open: boolean) => (e: ReactPointerEvent) => {
-    if (e.pointerType === 'mouse') setDropdownOpen(open)
-  }
-
-  const linkClass = ({ isActive }: { isActive: boolean }) => `nav__link ${isActive ? 'is-active' : ''}`
+  const moreNote = industryMoreNote ? <p className="nav__menu-note">{industryMoreNote}</p> : null
 
   return (
     <header className="nav">
@@ -58,48 +44,25 @@ export default function Navbar() {
             Home
           </NavLink>
 
-          <div className="nav__dropdown" ref={dropdownRef} onPointerEnter={hover(true)} onPointerLeave={hover(false)}>
-            <NavLink to="/projects" className={linkClass}>
-              Projects
-            </NavLink>
-            <button
-              type="button"
-              className={`nav__chevron ${dropdownOpen ? 'is-open' : ''}`}
-              aria-expanded={dropdownOpen}
-              aria-controls="projects-menu"
-              aria-label="Show project list"
-              onClick={() => setDropdownOpen((open) => !open)}
-            >
-              <Icon name="chevronDown" size={16} />
-            </button>
+          <NavDropdown
+            id="industry-menu"
+            label="Industry Experience"
+            active={pathname.startsWith('/experience')}
+            items={industryExperience}
+            footer={moreNote}
+          />
 
-            <AnimatePresence>
-              {dropdownOpen && (
-                <motion.div
-                  id="projects-menu"
-                  className="nav__menu"
-                  initial={{ opacity: 0, y: -6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.16 }}
-                >
-                  <ul>
-                    {projects.map((p) => (
-                      <li key={p.id}>
-                        <NavLink to={`/projects/${p.id}`} className={({ isActive }) => `nav__menu-item ${isActive ? 'is-active' : ''}`}>
-                          <span className="nav__menu-org">{p.org}</span>
-                          <span className="nav__menu-title">{p.title}</span>
-                        </NavLink>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/projects" className="nav__menu-all">
-                    View all projects <Icon name="arrowRight" size={14} />
-                  </Link>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+          <NavDropdown
+            id="projects-menu"
+            label="Projects"
+            to="/projects"
+            items={designProjects}
+            footer={
+              <Link to="/projects" className="nav__menu-all">
+                View all projects <Icon name="arrowRight" size={14} />
+              </Link>
+            }
+          />
 
           <NavLink to="/contact" className={linkClass}>
             Contact
@@ -136,18 +99,32 @@ export default function Navbar() {
               <NavLink to="/" end className={linkClass}>
                 Home
               </NavLink>
+
+              <p className="nav__mobile-heading">Industry Experience</p>
+              <ul className="nav__mobile-projects">
+                {industryExperience.map((p) => (
+                  <li key={p.id}>
+                    <NavLink to={projectPath(p)} className={linkClass}>
+                      {p.org}
+                    </NavLink>
+                  </li>
+                ))}
+                {industryMoreNote && <li className="nav__mobile-note">{industryMoreNote}</li>}
+              </ul>
+
               <NavLink to="/projects" end className={linkClass}>
                 Projects
               </NavLink>
               <ul className="nav__mobile-projects">
-                {projects.map((p) => (
+                {designProjects.map((p) => (
                   <li key={p.id}>
-                    <NavLink to={`/projects/${p.id}`} className={linkClass}>
+                    <NavLink to={projectPath(p)} className={linkClass}>
                       {p.org}
                     </NavLink>
                   </li>
                 ))}
               </ul>
+
               <NavLink to="/contact" className={linkClass}>
                 Contact
               </NavLink>
@@ -156,5 +133,122 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </header>
+  )
+}
+
+interface NavDropdownProps {
+  /** HTML id for the menu panel (must be unique on the page). */
+  id: string
+  label: string
+  /** If set, the label is a link to this page and a small arrow opens the menu. Otherwise the label itself opens it. */
+  to?: string
+  /** Highlights the label (only needed when there's no `to` page to match against). */
+  active?: boolean
+  items: Project[]
+  /** Optional content under the list, like a "View all" link or a note. */
+  footer?: ReactNode
+}
+
+/** A desktop navbar item with a dropdown list of projects. Opens on hover (mouse) or click/tap. */
+function NavDropdown({ id, label, to, active = false, items, footer }: NavDropdownProps) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  // True when the mouse opened the menu, so the click that usually follows doesn't immediately close it.
+  const openedByHover = useRef(false)
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+
+  // Close on Escape or when clicking anywhere outside this dropdown.
+  useEffect(() => {
+    if (!open) return
+    const onPointerDown = (e: PointerEvent) => {
+      if (!ref.current?.contains(e.target as Node)) setOpen(false)
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  const hover = (next: boolean) => (e: ReactPointerEvent) => {
+    if (e.pointerType !== 'mouse') return
+    openedByHover.current = next
+    setOpen(next)
+  }
+
+  const toggle = () => {
+    if (openedByHover.current) {
+      openedByHover.current = false
+      return
+    }
+    setOpen((o) => !o)
+  }
+
+  return (
+    <div className="nav__dropdown" ref={ref} onPointerEnter={hover(true)} onPointerLeave={hover(false)}>
+      {to ? (
+        <>
+          <NavLink to={to} className={linkClass}>
+            {label}
+          </NavLink>
+          <button
+            type="button"
+            className={`nav__chevron ${open ? 'is-open' : ''}`}
+            aria-expanded={open}
+            aria-controls={id}
+            aria-label={`Show ${label} list`}
+            onClick={toggle}
+          >
+            <Icon name="chevronDown" size={16} />
+          </button>
+        </>
+      ) : (
+        <button
+          type="button"
+          className={`nav__link nav__trigger ${active ? 'is-active' : ''} ${open ? 'is-open' : ''}`}
+          aria-expanded={open}
+          aria-controls={id}
+          onClick={toggle}
+        >
+          {label}
+          <Icon name="chevronDown" size={16} />
+        </button>
+      )}
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id={id}
+            className="nav__menu"
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.16 }}
+          >
+            {items.length > 0 && (
+              <ul>
+                {items.map((p) => (
+                  <li key={p.id}>
+                    <NavLink to={projectPath(p)} className={({ isActive }) => `nav__menu-item ${isActive ? 'is-active' : ''}`}>
+                      <span className="nav__menu-org">{p.org}</span>
+                      <span className="nav__menu-title">{p.title}</span>
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {footer}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   )
 }

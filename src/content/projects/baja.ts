@@ -15,20 +15,20 @@ import type { Project } from '../../types'
 const baja = {
   id: 'longhorn-baja-racing',
   org: 'Longhorn Baja Racing',
-  title: '[Subsystem] Design for a Baja SAE Off-Road Vehicle',
+  title: 'Ergonomic Brake Pedal Assembly for a Baja SAE Off-Road Vehicle',
   summary:
-    "Designing, analyzing, and building the [component/subsystem] for UT Austin's single-seat off-road race vehicle, which competes in Baja SAE.",
-  role: '[Subsystem] Design Engineer',
-  timeline: '[Fall 20XX] – Present',
-  team: '[Subsystem] subteam',
+    "Designing, analyzing, and building driver controls systems and safety protocols for UT Austin's single-seat off-road race vehicle, which competes in Baja SAE.",
+  role: 'Lead Engineer',
+  timeline: 'May 2025 – Present',
+  team: 'Ergonomics',
   tags: ['Vehicle Design', 'CAD', 'FEA', 'Manufacturing'],
-  tools: ['SolidWorks', 'SolidWorks Simulation / ANSYS', '[Machining / Welding]'],
+  tools: ['SolidWorks', 'SolidWorks Simulation', 'Manual Milling'],
   cover: { src: 'baja/cover.jpg', caption: 'The Longhorn Baja Racing car' },
 
   highlights: [
-    'Reduced [component] mass by [X]% while keeping a minimum factor of safety of [X]',
-    'Validated the design with FEA across [N] load cases (impact, braking, cornering)',
-    'Took the part from first sketch to a [machined / welded / printed] part on the car',
+    // 'Reduced [component] mass by [X]% while keeping a minimum factor of safety of [X]',
+    // 'Validated the design with FEA across [N] load cases (impact, braking, cornering)',
+    // 'Took the part from first sketch to a [machined / welded / printed] part on the car',
   ],
 
   links: [
@@ -39,34 +39,35 @@ const baja = {
     {
       title: 'Overview',
       paragraphs: [
-        "Longhorn Baja Racing is UT Austin's Baja SAE team. Each year, students design, build, and race a single-seat off-road vehicle against university teams from around the world. The car is judged in static events (design, cost, and business presentations) and dynamic events such as acceleration, hill climb, maneuverability, suspension and traction, and a four-hour endurance race.",
-        'Every team runs the same stock engine, so the advantage comes from engineering: a lighter car, a stronger and more reliable chassis, and a drivetrain and suspension that put the power down over rough terrain. My work focused on the [component/subsystem], which [one sentence on what it does on the car].',
+        "Longhorn Baja Racing is UT Austin's Baja SAE team. Each year, we design, build, and race a single-seat off-road vehicle against other collegiate teams from around the world on the renowned 4-hour endurance race. Our vehicle is judged in static events (design, cost, and business presentations) and dynamic events (acceleration, hill climb, maneuverability, and suspension and traction).",
+        "Every team runs the same stock engine, so the advantage comes from engineering: a lighter car, a stronger and more reliable chassis, and a drivetrain and suspension that put the power down over rough terrain. My work focused on vehicle ergonomics, which encapsulates driver comfort, safety, and the vehicle's control systems.",
       ],
     },
     {
       title: 'Problem & Requirements',
       paragraphs: [
-        'The previous [component] [describe the problem: it was heavy, it failed during testing, it was hard to manufacture, it did not package well, etc.]. I set out to redesign it around a clear set of requirements:',
+        'Ensuring each of our four drivers could reliably actuate the brake pedal would be difficult if our brake pedal was set to one determined angle and stiffness. I set out to design an adjustable brake pedal assembly, easy to set within the pressure of an ongoing race, and gives each driver their own personalized setting for braking stiffness and angular range of motion.',
       ],
       bullets: [
-        'Withstand [X] g impact loads from jump landings and rough terrain without yielding',
-        'Weigh under [X] lb ([X]% lighter than the previous design)',
+        'Withstand 450 lbf / 2000 N loads from any given driver',
+        'Weigh within 0.5 lbs of 3 lbs (most commercial racing brake pedal assemblies weigh 3 lbs)',
         'Be manufacturable in-house with [mill / lathe / waterjet / welding fixture]',
-        'Fit within the existing [frame / suspension / drivetrain] packaging and comply with Baja SAE rules',
+        'Fit within the existing chassis, steering, suspension packaging and comply with the Baja SAE 2026 rulebook',
       ],
     },
     {
       title: 'Preliminary Design',
       paragraphs: [
-        'I started by benchmarking the previous design and [other teams / commercial parts], then generated [N] concepts. I compared them in a weighted decision matrix on mass, strength, manufacturability, cost, and ease of maintenance.',
-        'Hand calculations for [bending / shear / bearing stress] gave me first-pass dimensions before moving into CAD, which kept the CAD iterations focused.',
+        'I started by consulting other competing teams to gain advice for how they tackled the same issue before beginning initial skeches.',
+        'Hand calculations for mechanical advantages and pedal ratios gave me initial dimensions to match during the initial CAD designs.',
       ],
       images: [
-        { src: 'baja/decision-matrix.png', caption: 'Weighted decision matrix comparing concepts' },
-        { src: 'baja/hand-calcs.jpg', caption: 'First-pass hand calculations' },
+        { src: 'baja/preliminary-sketch.png', caption: "Initial Sketch based on Proven Teams' Expertise"},
+        // { src: 'baja/hand-calcs.jpg', caption: 'First-pass hand calculations' },
       ],
-    },
+    }, /*
     {
+      
       title: 'Design Sketches',
       paragraphs: ['Early sketches exploring geometry, load paths, and how the part mounts to the rest of the car.'],
       images: [
@@ -76,6 +77,7 @@ const baja = {
       ],
       columns: 3,
     },
+    */
     {
       title: 'CAD',
       paragraphs: [

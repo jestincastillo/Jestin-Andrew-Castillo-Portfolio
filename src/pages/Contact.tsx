@@ -1,21 +1,32 @@
 import Icon, { type IconName } from '../components/Icon'
+import { useResume } from '../components/ResumeButton'
 import Reveal from '../components/Reveal'
 import { profile } from '../content/profile'
-import { publicUrl } from '../lib/paths'
 import { usePageTitle } from '../lib/usePageTitle'
 
 const prettyUrl = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
 
+interface ContactMethod {
+  icon: IconName
+  label: string
+  value: string
+  href: string
+  external?: boolean
+  /** File name to save as; makes the link a download. */
+  download?: string
+}
+
 export default function Contact() {
   usePageTitle('Contact')
+  const resume = useResume()
 
-  const methods: { icon: IconName; label: string; value: string; href: string; external?: boolean }[] = [
+  const methods: ContactMethod[] = [
     { icon: 'mail', label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
     { icon: 'linkedin', label: 'LinkedIn', value: prettyUrl(profile.linkedin), href: profile.linkedin, external: true },
     { icon: 'github', label: 'GitHub', value: prettyUrl(profile.github), href: profile.github, external: true },
   ]
-  if (profile.resume) {
-    methods.push({ icon: 'file', label: 'Resume', value: 'View PDF', href: publicUrl(profile.resume), external: true })
+  if (resume.available) {
+    methods.push({ icon: 'file', label: 'Resume', value: 'Download PDF', href: resume.url, download: resume.fileName })
   }
 
   return (
@@ -35,6 +46,7 @@ export default function Contact() {
             <a
               href={m.href}
               className="contact-card"
+              download={m.download}
               {...(m.external ? { target: '_blank', rel: 'noreferrer' } : {})}
             >
               <span className="contact-card__icon">
@@ -44,7 +56,7 @@ export default function Contact() {
                 <span className="contact-card__label">{m.label}</span>
                 <span className="contact-card__value">{m.value}</span>
               </span>
-              <Icon name={m.external ? 'external' : 'arrowRight'} size={16} />
+              <Icon name={m.download ? 'download' : m.external ? 'external' : 'arrowRight'} size={16} />
             </a>
           </Reveal>
         ))}

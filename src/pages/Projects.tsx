@@ -1,6 +1,6 @@
 import ProjectCard from '../components/ProjectCard'
 import Reveal from '../components/Reveal'
-import { projects } from '../content/projects'
+import { designProjects } from '../content/projects'
 import { usePageTitle } from '../lib/usePageTitle'
 
 export default function Projects() {
@@ -17,7 +17,7 @@ export default function Projects() {
         </p>
       </Reveal>
       <div className="card-grid">
-        {projects.map((project, i) => (
+        {designProjects.map((project, i) => (
           <Reveal key={project.id} delay={(i % 2) * 0.06}>
             <ProjectCard project={project} />
           </Reveal>

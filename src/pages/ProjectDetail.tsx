@@ -4,8 +4,8 @@ import Gallery from '../components/Gallery'
 import Icon from '../components/Icon'
 import ImageFrame from '../components/ImageFrame'
 import Reveal from '../components/Reveal'
-import { getProject, projects } from '../content/projects'
-import { slugify } from '../lib/paths'
+import { designProjects, getProject, industryExperience } from '../content/projects'
+import { projectPath, slugify } from '../lib/paths'
 import { usePageTitle } from '../lib/usePageTitle'
 import type { Project, ProjectSection } from '../types'
 import NotFound from './NotFound'
@@ -29,9 +29,12 @@ function ProjectPage({ project }: { project: Project }) {
   const sectionIds = useMemo(() => uniqueIds(project.sections.map((s) => s.title)), [project])
   const activeId = useActiveSection(sectionIds)
 
-  const index = projects.findIndex((p) => p.id === project.id)
-  const prev = projects.length > 1 ? projects[(index - 1 + projects.length) % projects.length] : null
-  const next = projects.length > 1 ? projects[(index + 1) % projects.length] : null
+  // Previous/next only step through the same group (projects, or industry experience).
+  const isIndustry = project.category === 'industry'
+  const group = isIndustry ? industryExperience : designProjects
+  const index = group.findIndex((p) => p.id === project.id)
+  const prev = group.length > 1 ? group[(index - 1 + group.length) % group.length] : null
+  const next = group.length > 1 ? group[(index + 1) % group.length] : null
 
   const scrollTo = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -39,8 +42,8 @@ function ProjectPage({ project }: { project: Project }) {
 
   return (
     <article className="container project">
-      <Link to="/projects" className="text-link project__back">
-        <Icon name="arrowLeft" size={16} /> All projects
+      <Link to={isIndustry ? '/' : '/projects'} className="text-link project__back">
+        <Icon name="arrowLeft" size={16} /> {isIndustry ? 'Home' : 'All projects'}
       </Link>
 
       <Reveal className="project__header">
@@ -71,13 +74,15 @@ function ProjectPage({ project }: { project: Project }) {
           )}
         </dl>
 
-        <ul className="tags" aria-label="Tags">
-          {project.tags.map((tag, i) => (
-            <li key={`${tag}-${i}`} className="tag">
-              {tag}
-            </li>
-          ))}
-        </ul>
+        {project.tags.length > 0 && (
+          <ul className="tags" aria-label="Tags">
+            {project.tags.map((tag, i) => (
+              <li key={`${tag}-${i}`} className="tag">
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
 
         {project.links && project.links.length > 0 && (
           <div className="project__links">
@@ -108,6 +113,11 @@ function ProjectPage({ project }: { project: Project }) {
                   onClick={() => scrollTo(sectionIds[i])}
                 >
                   {section.title}
+                  {section.status && (
+                    <span className="project__toc-status" title={section.status}>
+                      <span className="visually-hidden"> ({section.status})</span>
+                    </span>
+                  )}
                 </button>
               </li>
             ))}
@@ -134,13 +144,13 @@ function ProjectPage({ project }: { project: Project }) {
 
       {prev && next && (
         <nav className="project__pager" aria-label="More projects">
-          <Link to={`/projects/${prev.id}`} className="project__pager-link">
+          <Link to={projectPath(prev)} className="project__pager-link">
             <span className="project__pager-dir">
               <Icon name="arrowLeft" size={14} /> Previous
             </span>
             <span className="project__pager-name">{prev.org}</span>
           </Link>
-          <Link to={`/projects/${next.id}`} className="project__pager-link project__pager-link--next">
+          <Link to={projectPath(next)} className="project__pager-link project__pager-link--next">
             <span className="project__pager-dir">
               Next <Icon name="arrowRight" size={14} />
             </span>
@@ -153,11 +163,17 @@ function ProjectPage({ project }: { project: Project }) {
 }
 
 function Section({ id, section }: { id: string; section: ProjectSection }) {
+  // Skip blank paragraphs like '' so they don't leave an empty gap.
+  const paragraphs = section.paragraphs?.filter((p) => p.trim() !== '') ?? []
+
   return (
     <section id={id} className="project__section">
       <Reveal>
-        <h2>{section.title}</h2>
-        {section.paragraphs?.map((paragraph, i) => (
+        <h2 className="project__section-title">
+          {section.title}
+          {section.status && <span className="status-badge">{section.status}</span>}
+        </h2>
+        {paragraphs.map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
         ))}
         {section.bullets && section.bullets.length > 0 && (
@@ -170,7 +186,7 @@ function Section({ id, section }: { id: string; section: ProjectSection }) {
       </Reveal>
       {section.images && section.images.length > 0 && (
         <Reveal>
-          <Gallery images={section.images} columns={section.columns} />
+          <Gallery images={section.images} columns={section.columns} centered={section.centered} />
         </Reveal>
       )}
     </section>

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import Icon from '../components/Icon'
+import ProfilePhoto from '../components/ProfilePhoto'
 import ProjectCard from '../components/ProjectCard'
+import ResumeButton from '../components/ResumeButton'
 import Reveal from '../components/Reveal'
 import { profile } from '../content/profile'
-import { projects } from '../content/projects'
-import { publicUrl } from '../lib/paths'
+import { designProjects, industryExperience, industryMoreNote } from '../content/projects'
 import { usePageTitle } from '../lib/usePageTitle'
 
 export default function Home() {
@@ -16,29 +17,46 @@ export default function Home() {
       <section className="hero">
         <div className="hero__grid" aria-hidden="true" />
         <div className="container hero__inner">
-          <Reveal>
-            <p className="eyebrow">Engineering Portfolio</p>
-            <h1 className="hero__name">{profile.name}</h1>
-            <p className="hero__title">{profile.title}</p>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <p className="hero__bio">{intro}</p>
-          </Reveal>
-          <Reveal delay={0.16} className="hero__actions">
-            <Link to="/projects" className="btn btn--primary">
-              View my projects <Icon name="arrowRight" size={16} />
-            </Link>
-            <Link to="/contact" className="btn btn--ghost">
-              Get in touch
-            </Link>
-            {profile.resume && (
-              <a href={publicUrl(profile.resume)} className="btn btn--ghost" target="_blank" rel="noreferrer">
-                <Icon name="file" size={16} /> Resume
-              </a>
-            )}
-          </Reveal>
+          <div className="hero__text">
+            <Reveal>
+              <p className="eyebrow">Engineering Portfolio</p>
+              <h1 className="hero__name">{profile.name}</h1>
+              <p className="hero__title">{profile.title}</p>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p className="hero__bio">{intro}</p>
+            </Reveal>
+            <Reveal delay={0.16} className="hero__actions">
+              <Link to="/projects" className="btn btn--primary">
+                View my projects <Icon name="arrowRight" size={16} />
+              </Link>
+              <Link to="/contact" className="btn btn--ghost">
+                Get in touch
+              </Link>
+              <ResumeButton />
+            </Reveal>
+          </div>
+          <ProfilePhoto />
         </div>
       </section>
+
+      {industryExperience.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <Reveal className="section__head">
+              <h2>Industry experience</h2>
+            </Reveal>
+            <div className="card-grid">
+              {industryExperience.map((project, i) => (
+                <Reveal key={project.id} delay={(i % 2) * 0.06}>
+                  <ProjectCard project={project} />
+                </Reveal>
+              ))}
+            </div>
+            {industryMoreNote && <p className="more-note">{industryMoreNote}</p>}
+          </div>
+        </section>
+      )}
 
       <section className="section">
         <div className="container">
@@ -49,7 +67,7 @@ export default function Home() {
             </Link>
           </Reveal>
           <div className="card-grid">
-            {projects.map((project, i) => (
+            {designProjects.map((project, i) => (
               <Reveal key={project.id} delay={(i % 2) * 0.06}>
                 <ProjectCard project={project} />
               </Reveal>

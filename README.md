@@ -4,8 +4,9 @@
 
 A personal engineering portfolio built with **React 18 + TypeScript + Vite**, deployed free on **GitHub Pages** through GitHub Actions.
 
-- `/`: home (intro, featured projects, skills)
-- `/projects`: all projects
+- `/`: home (intro, industry experience, featured projects, skills)
+- `/experience/<id>`: one page per job or internship (Industry Experience menu)
+- `/projects`: all design-team projects
 - `/projects/<id>`: one page per project (sketches, CAD, FEA, results)
 - `/contact`: email, LinkedIn, GitHub
 
@@ -140,6 +141,8 @@ Each section is one `{ ... }` block in a project's `sections` list:
   bullets: ['Optional bullet', 'Another bullet'],
   images: [{ src: 'baja/sketch-1.jpg', caption: 'Early concept' }],
   columns: 3, // optional: images per row (1, 2, or 3)
+  centered: true, // optional: center the images and captions
+  status: 'In Progress', // optional: label next to the heading; delete when finished
 },
 ```
 
@@ -150,11 +153,16 @@ Each section is one `{ ... }` block in a project's `sections` list:
 ### Add or remove a project
 - **Add:** copy a file in `src/content/projects/` (e.g. `agentic.ts` → `my-project.ts`), change its `id` and content, then import it and add it to the list in `src/content/projects/index.ts`. Make a folder for its images in `public/images/my-project/`.
 - **Remove:** take it out of the list in `src/content/projects/index.ts`.
+- **Industry Experience vs Projects:** add `category: 'industry',` near the top of a project file (like in `agentic.ts`) to list it under **Industry Experience** instead of **Projects**. Delete that line to move it back.
+- **"More to come…" note:** change or blank out `industryMoreNote` in `src/content/projects/index.ts`.
 
-The navbar dropdown, home page, and projects page all update automatically.
+The navbar dropdowns, home page, and projects page all update automatically.
 
-### Add your resume
-Put the PDF at `public/resume.pdf` and set `resume: 'resume.pdf'` in `src/content/profile.ts`. A Resume button appears on the home and contact pages.
+### Add your resume and photo
+- **Resume:** save your PDF as `public/resume.pdf`. A **Download resume** button appears on the home page (and a Resume card on the Contact page). Visitors get the file as `Jestin-Andrew-Castillo-Resume.pdf`. To update it later, just replace the file.
+- **Photo:** save your headshot as `public/images/profile.jpg`. It appears to the right of your name on the home page. A portrait (taller than wide) photo works best.
+
+Until each file exists, the live site simply leaves it out, and `npm run dev` shows where to put it. The file names are set by `resume` and `photo` in `src/content/profile.ts`.
 
 ---
 

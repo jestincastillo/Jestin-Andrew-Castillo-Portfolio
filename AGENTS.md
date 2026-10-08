@@ -14,7 +14,8 @@ A personal engineering portfolio: React 18 + TypeScript + Vite, React Router v6,
 ## Where things live
 - `src/content/profile.ts`: name, bio, contact links, skills, resume path
 - `src/content/projects/*.ts`: one file per project; each default-exports an object that `satisfies Project`
-- `src/content/projects/index.ts`: ordered list of projects (controls order everywhere, including the navbar dropdown)
+- `src/content/projects/index.ts`: ordered list of projects (controls order everywhere, including the navbar dropdowns), plus `designProjects`, `industryExperience`, and the `industryMoreNote` text
+- A project with `category: 'industry'` appears in the Industry Experience menu and home section, with its page at `/experience/<id>`; all others appear under Projects at `/projects/<id>`. Build links with `projectPath()` from `src/lib/paths.ts`, never by hand.
 - `src/types.ts`: `Project`, `ProjectSection`, `ProjectImage`, `ProjectLink` types
 - `src/pages/`: route components (`Home`, `Projects`, `ProjectDetail`, `Contact`, `NotFound`)
 - `src/components/`: shared UI (`Navbar`, `ProjectCard`, `Gallery`, `Lightbox`, `ImageFrame`, `Reveal`, `ThemeSwitcher`, `Icon`)
@@ -27,6 +28,8 @@ A personal engineering portfolio: React 18 + TypeScript + Vite, React Router v6,
 - **Every project page uses the `ProjectDetail.tsx` template.** Don't create per-project components. Add or remove sections in the project's content file.
 - **Image paths** in content files are relative to `public/images/`: write `'baja/cad.png'` for `public/images/baja/cad.png`. Don't prefix with `/`, `public/`, or `images/`. `imageUrl()` in `src/lib/paths.ts` adds the GitHub Pages base path.
 - Missing images render a placeholder automatically, so it's fine to list images before the files exist.
+- Section options: `columns` (1–3 images per row), `centered: true` (center images and captions), `status: 'In Progress'` (badge next to the heading plus a dot in the sidebar).
+- `profile.resume` (`public/resume.pdf`) and `profile.photo` (`public/images/profile.jpg`) drive the home page "Download resume" button and headshot. Both stay hidden in production until the file exists (see `useFileExists`).
 - Use lowercase, dash-separated file names for images (GitHub Pages is case-sensitive).
 - **Colors:** only use CSS variables from `theme.css` (`var(--text)`, `var(--accent)`, etc.). Never hard-code colors in components. If you add a new variable, define it in all three themes.
 - Keep the design simple and clean: no glassmorphism, bento grids, or heavy effects. Use the `Reveal` component for scroll-in animation.

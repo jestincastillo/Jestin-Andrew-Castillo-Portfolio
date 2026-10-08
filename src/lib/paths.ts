@@ -1,4 +1,11 @@
+import type { Project } from '../types'
+
 const BASE = import.meta.env.BASE_URL
+
+/** Page address for a project: /experience/<id> for industry work, /projects/<id> otherwise. */
+export function projectPath(project: Project) {
+  return project.category === 'industry' ? `/experience/${project.id}` : `/projects/${project.id}`
+}
 
 /**
  * Turns an image path from a project file ("baja/cad.png") into a URL that works

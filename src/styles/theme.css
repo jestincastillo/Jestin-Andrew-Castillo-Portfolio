@@ -28,6 +28,10 @@
   --accent-ink: #10161d; /* text on top of an accent-colored button */
   --accent-soft: rgba(140, 184, 230, 0.12);
 
+  --status: #e2b866; /* "In Progress" labels */
+  --status-soft: rgba(226, 184, 102, 0.12);
+  --status-border: rgba(226, 184, 102, 0.35);
+
   --nav-bg: rgba(21, 23, 26, 0.84);
   --grid-line: rgba(255, 255, 255, 0.035);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -54,6 +58,10 @@
   --accent-ink: #0b1520;
   --accent-soft: rgba(125, 183, 236, 0.13);
 
+  --status: #e6bd6b;
+  --status-soft: rgba(230, 189, 107, 0.12);
+  --status-border: rgba(230, 189, 107, 0.35);
+
   --nav-bg: rgba(15, 22, 32, 0.84);
   --grid-line: rgba(160, 200, 255, 0.045);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -79,6 +87,10 @@
   --accent-hover: #164f86;
   --accent-ink: #ffffff;
   --accent-soft: rgba(29, 101, 168, 0.1);
+
+  --status: #8a5a06;
+  --status-soft: rgba(176, 116, 10, 0.1);
+  --status-border: rgba(176, 116, 10, 0.32);
 
   --nav-bg: rgba(231, 239, 248, 0.86);
   --grid-line: rgba(29, 101, 168, 0.06);

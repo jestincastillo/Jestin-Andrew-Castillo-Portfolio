@@ -9,18 +9,20 @@ const enable = {
   title: 'Custom 3D-Printed Prosthetic Hand',
   summary:
     'Designing and 3D printing a low-cost, body-powered prosthetic hand tailored to a recipient with an upper-limb difference.',
-  role: '[Designer / Project Lead]',
-  timeline: '[Semester 20XX]',
-  team: '[N]-person design team',
+  role: 'Team Lead',
+  timeline: 'October 2025 - October 2026',
+  team: 'Test Hands',
   tags: ['Assistive Tech', 'CAD', '3D Printing', 'User-Centered Design'],
-  tools: ['[Fusion 360 / SolidWorks]', '[Cura / PrusaSlicer]', 'FDM printing'],
+  tools: ['SolidWorks', 'Bambu Studio', 'FDM printing'],
   cover: { src: 'enable/cover.jpg', caption: 'Assembled prosthetic hand' },
 
+  /*
   highlights: [
     'Delivered a custom-fit device to [a recipient / N recipients] at no cost',
     'Scaled and modified a parametric hand design from patient measurements',
     'Iterated through [N] printed prototypes to improve grip and comfort',
   ],
+  */
 
   links: [
     // { label: 'e-NABLE community', url: 'https://enablingthefuture.org' },
@@ -30,25 +32,25 @@ const enable = {
     {
       title: 'Overview',
       paragraphs: [
-        'e-NABLE is a global volunteer network that designs and 3D prints free upper-limb assistive devices for people born with limb differences or who have lost fingers or hands. The UT Austin chapter works directly with recipients to build devices that fit their bodies and their daily lives.',
-        'Our team designed a body-powered, wrist-actuated hand for [describe the recipient in general terms, e.g. "a young child with a partial hand difference"]. Bending the wrist pulls tendon cords that close the fingers, so the device works without motors or batteries.',
+        'e-NABLE is a global volunteer network that designs and 3D prints upper-limb assistive devices for people with limb differences. The UT Austin chapter works directly with the national e-NABLE chapter to build devices that fit clients and properly support their daily lives.',
+        'Our team designed a body-powered, wrist-actuated hand for a young child with a partial hand difference. Bending the wrist pulls string cords which close the fingers, so the device is fully functional without motors or batteries.',
       ],
     },
     {
       title: 'Recipient Needs & Requirements',
-      paragraphs: ['We started by meeting the recipient and their family to understand what they wanted to be able to do. That conversation turned into design requirements:'],
+      paragraphs: ['We started by contacting the recipient and their family to understand what the client wanted to be able to do:'],
       bullets: [
-        'Grip everyday objects such as [a cup, a bike handlebar, a backpack strap]',
-        'Lightweight and comfortable enough to wear for [X] hours',
+        'Grip everyday objects such as a water bottle, cup, or kitchen utensils.',
+        'Lightweight and comfortable enough to wear for 6 hours',
         'Sized from hand and forearm measurements, with room to adjust as they grow',
-        '[Personal touch: color choice, theme, or design request from the recipient]',
+        'Personalized styling: colored filament requests from the recipient',
       ],
     },
     {
       title: 'Preliminary Design',
       paragraphs: [
-        'We compared open-source e-NABLE designs such as [the Phoenix Hand / Raptor Reloaded / Kinetic Hand] on grip strength, ease of assembly, and fit for the recipient\'s residual limb. We chose [design] because [reason], then planned modifications for [palm size / finger length / gauntlet fit].',
-        'Scaling was based on measurements of the recipient\'s [unaffected hand / residual limb], with a scale factor of [X]% to match their proportions.',
+        "We compared open-source e-NABLE designs such as the Phoenix Hand and Kwawu models on grip strength, ease of assembly, and fit for the recipient's residual limb. We chose the Kwawu arm since our client had a below the elbow amputation and would not have access to wrist-actuated models.",
+        "Scaling was based on measurements of the recipient's residual limb, with a scale factor of 10% to match their proportions, as a model the client could grow into is more beneficial than a model which is already too small for the client.",
       ],
       images: [
         { src: 'enable/measurements.jpg', caption: 'Hand and forearm measurements used for scaling' },
@@ -56,23 +58,23 @@ const enable = {
       ],
     },
     {
-      title: 'Design Sketches',
+      /*title: 'Design Sketches',
       images: [
         { src: 'enable/sketch-1.jpg', caption: 'Sketch: [palm / gauntlet modification]' },
         { src: 'enable/sketch-2.jpg', caption: 'Sketch: [tendon routing / finger joint]' },
       ],
     },
-    {
+    {*/
       title: 'CAD',
       paragraphs: [
-        'In [Fusion 360 / SolidWorks], I [scaled the base model / redesigned the gauntlet / modified the finger joints] to [improve fit / add a thumb position / make room for padding]. I kept critical features, such as pin holes and tendon channels, at fixed sizes so the hardware still fit after scaling.',
+        'In Bambu Studio, I scaled the base model to improve fit and proportions for our client. I kept critical features, such as pin holes and tendon channels, at fixed sizes so the hardware still fit after scaling.',
       ],
       images: [
         { src: 'enable/cad-assembly.png', caption: 'Full hand assembly in CAD' },
         { src: 'enable/cad-detail.png', caption: 'Detail: [modified feature]' },
       ],
     },
-    {
+    /*{
       title: 'FEA',
       paragraphs: [
         'To check that the thinnest printed features would survive repeated gripping, I ran a simplified static analysis on the [finger knuckle / palm hinge region] using the expected tendon tension of [X] N and [PLA / PETG] material properties. [Describe the result, e.g. peak stress and factor of safety, and any changes you made.]',
@@ -89,7 +91,7 @@ const enable = {
         { src: 'enable/printing.jpg', caption: 'Parts coming off the printer' },
         { src: 'enable/fitting.jpg', caption: 'Fitting session' },
       ],
-    },
+    },*/
     {
       title: 'Impact & Lessons Learned',
       bullets: [

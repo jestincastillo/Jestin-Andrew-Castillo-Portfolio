@@ -26,6 +26,10 @@ export interface ProjectSection {
   images?: ProjectImage[]
   /** How many images per row on desktop (defaults to 1 for a single image, otherwise 2). */
   columns?: 1 | 2 | 3
+  /** true = center the images and their captions (a leftover image on the last row sits in the middle). */
+  centered?: boolean
+  /** Optional label next to the heading, e.g. 'In Progress'. */
+  status?: string
 }
 
 export interface ProjectLink {
@@ -36,6 +40,11 @@ export interface ProjectLink {
 export interface Project {
   /** Used in the URL: /projects/<id>. Lowercase letters, numbers, and dashes only. */
   id: string
+  /**
+   * Which navbar menu this belongs in. 'project' (the default if left out) goes
+   * under Projects; 'industry' goes under Industry Experience.
+   */
+  category?: 'project' | 'industry'
   /** Organization or team, e.g. "Longhorn Baja Racing". */
   org: string
   title: string

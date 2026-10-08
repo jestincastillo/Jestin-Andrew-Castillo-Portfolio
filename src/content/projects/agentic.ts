@@ -8,16 +8,17 @@ import type { Project } from '../../types'
 
 const agentic = {
   id: 'agentic-innovations',
+  category: 'industry', // shows under "Industry Experience" in the navbar instead of "Projects"
   org: 'Agentic Innovations',
-  title: '[Project Title]',
-  summary: '[One or two sentences: what you built or worked on, and why it mattered.]',
-  role: '[Your Role]',
-  timeline: '[Month 20XX] – [Month 20XX]',
-  tags: ['[Tag 1]', '[Tag 2]', '[Tag 3]'],
-  tools: ['[Tool 1]', '[Tool 2]'],
+  title: 'AI-Powered Supply Chain Tracker',
+  summary: 'An autonomous all-in-one platform for engineering teams to track purchased parts, component dependencies, workflow patterns, and potential impacts to an assembly.',
+  role: 'Applied AI Engineering Intern',
+  timeline: 'May – August 2026',
+  tags: [],
+  // tools: ['[Tool 1]', '[Tool 2]'],
   cover: { src: 'agentic/cover.jpg', caption: '[Cover image]' },
 
-  highlights: ['[Key outcome #1]', '[Key outcome #2]'],
+  // highlights: ['[Key outcome #1]', '[Key outcome #2]'],
 
   links: [
     // { label: 'Company website', url: 'https://...' },
@@ -27,26 +28,30 @@ const agentic = {
     {
       title: 'Overview',
       paragraphs: [
-        '[What Agentic Innovations does, in one or two sentences.]',
-        '[What you were brought in to do, and the problem you were solving.]',
+        'Agentic Innovations aims to develop AI-powered solutions to problems plaguing teams and businesses worldwide.',
+        'As an Applied AI Engineering Intern, I was tasked to conduct customer discovery to identify potential problems that could be solved through the ethical use of artificial intelligence, and then develop generalized AI tools which could be trained to become efficient in working with one another to solve this problem. As a Team Lead at Longhorn Baja Racing, me and my team struggled with keeping track of our bills of materials, which sparked my interest in creating this agentic solution to this common problem which many other collegiate teams face.',
       ],
     },
     {
-      title: 'My Role',
-      bullets: ['[Responsibility #1]', '[Responsibility #2]', '[Responsibility #3]'],
+      title: 'Tools I Developed:',
+      bullets: ['Operational Impact Simulator - Displays possible conflicts between components in an assembly', 'Alternate Sourcing Engine - Scrapes the web to find alternate suppliers, allowing users to rank their priorities between pricing, lead time, and reliability', 'Workflow Mapper - Generates a workflow pattern for a given process and highlights the critical path and slack timeframes'],
     },
     {
-      title: 'Approach',
-      paragraphs: ['[How you tackled the problem: research, design, prototyping, testing, or iteration.]'],
+      title: 'Images',
+      paragraphs: [''],
       images: [
-        { src: 'agentic/process-1.png', caption: '[Describe this image]' },
-        { src: 'agentic/process-2.png', caption: '[Describe this image]' },
+        { src: 'agentic/process-1.png', caption: 'Operational Impact Simulator' },
+        { src: 'agentic/process-2.png', caption: 'Alternate Sourcing Engine' },
+        { src: 'agentic/process-3.png', caption: 'Workflow Mapper' },
       ],
+      columns: 3, // all three side by side (use 2 for bigger images, with the third centered below)
+      centered: true, // centers the images and their captions
     },
     {
       title: 'Results',
-      bullets: ['[Result with a number if possible]', '[What you learned]'],
+      bullets: ['Optimized Baja SAE racecar budget by 10.2% and reduced critical path component delivery by 10 days', 'This experience provided deep insight into supply chain dynamics, illustrating how vendor lead times and critical component dependencies directly dictate overall assembly schedules. This opportunity taught me the various events that may impact the way components reach an engineering team and how component dependencies affect the production of an assembly as a whole, and the benefits of being able to track these events down to a microscopic level. '],
     },
+  
   ],
 } satisfies Project
 

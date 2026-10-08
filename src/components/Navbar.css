@@ -89,6 +89,25 @@
   transform: rotate(180deg);
 }
 
+/* A menu label that isn't a page link (e.g. "Industry Experience"): the whole label opens the menu. */
+.nav__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  line-height: inherit;
+}
+
+.nav__trigger svg {
+  transition: transform 0.2s ease;
+}
+
+.nav__trigger.is-open svg {
+  transform: rotate(180deg);
+}
+
 .nav__menu {
   position: absolute;
   top: calc(100% + 10px);
@@ -156,6 +175,20 @@
   font-weight: 500;
 }
 
+.nav__menu-note {
+  margin: 0;
+  padding: 8px 12px 6px;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-faint);
+}
+
+.nav__menu ul + .nav__menu-note {
+  margin-top: 4px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
 .nav__right {
   display: flex;
   align-items: center;
@@ -203,7 +236,23 @@
   padding: 7px 12px;
 }
 
-@media (max-width: 760px) {
+.nav__mobile-heading {
+  margin: 0;
+  padding: 8px 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav__mobile-note {
+  padding: 7px 12px;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-faint);
+}
+
+/* Below this width the links don't fit in one row, so the menu button takes over. */
+@media (max-width: 900px) {
   .nav__links {
     display: none;
   }
@@ -213,7 +262,7 @@
   }
 }
 
-@media (min-width: 761px) {
+@media (min-width: 901px) {
   .nav__mobile {
     display: none;
   }

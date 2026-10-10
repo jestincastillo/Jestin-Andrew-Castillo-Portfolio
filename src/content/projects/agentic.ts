@@ -40,7 +40,7 @@ const agentic = {
       title: 'Images',
       paragraphs: [''],
       images: [
-        { src: 'agentic/process-1.jpg', caption: 'Alternate Sourcing Engin, Inputs' },
+        { src: 'agentic/process-1.jpg', caption: 'Alternate Sourcing Engine, Inputs' },
         { src: 'agentic/process-2.jpg', caption: 'Alternate Sourcing Engine, Outputs' },
         { src: 'agentic/process-3.jpg', caption: 'Workflow Mapper, Based On A Formula SAE Vehicle' },
       ],

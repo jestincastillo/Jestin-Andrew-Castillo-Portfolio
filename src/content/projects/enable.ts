@@ -47,7 +47,7 @@ const enable = {
       ],
     },
     {
-      title: 'Preliminary Design',
+      title: 'Preliminary Considerations',
       paragraphs: [
         "We compared open-source e-NABLE designs such as the Phoenix Hand and Kwawu models on grip strength, ease of assembly, and fit for the recipient's residual limb. We chose the Kwawu arm since our client had a below the elbow amputation and would not have access to wrist-actuated models.",
         "Scaling was based on measurements of the recipient's residual limb, with a scale factor of 10% to match their proportions, as a model the client could grow into is more beneficial than a model which is already too small for the client.",

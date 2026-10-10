@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Disclaimer:** The code for this website was built with the help of AI. All of the written content and images on the site were created by me, Jestin Andrew Castillo.
+
 # Jestin Andrew Castillo · Engineering Portfolio
 
 **Live site:** https://jestincastillo.github.io/Jestin-Andrew-Castillo-Portfolio/
@@ -110,8 +113,7 @@ Almost everything you'll want to change lives in **`src/content/`**. You shouldn
 | A project's text, sections, and pictures | `src/content/projects/<project>.ts` |
 | Which projects appear, and in what order | `src/content/projects/index.ts` |
 | Pictures | `public/images/<project>/` |
-| Colors for each theme | `src/styles/theme.css` |
-| Which theme loads first | `DEFAULT_THEME` in `src/lib/theme.ts` |
+| Colors | `src/styles/theme.css` |
 
 Anything in **[square brackets]** in the content files is a placeholder for you to replace.
 

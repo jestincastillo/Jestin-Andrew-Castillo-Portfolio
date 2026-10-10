@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="graphite">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,13 +12,6 @@
       rel="stylesheet"
     />
     <title>Engineering Portfolio</title>
-    <script>
-      // Apply the saved color theme before the page paints (avoids a flash of the wrong theme).
-      try {
-        var saved = localStorage.getItem('portfolio-theme')
-        if (saved) document.documentElement.setAttribute('data-theme', saved)
-      } catch (e) {}
-    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -764,34 +764,6 @@ code {
   color: var(--text-muted);
 }
 
-/* ── Theme switcher (in navbar) ──────────────────────────────────────────── */
-
-.theme-switcher {
-  display: flex;
-  gap: 6px;
-  padding: 5px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-}
-
-.theme-switcher__dot {
-  width: 18px;
-  height: 18px;
-  padding: 0;
-  border-radius: 999px;
-  border: 1px solid var(--border-strong);
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.theme-switcher__dot:hover {
-  transform: scale(1.12);
-}
-
-.theme-switcher__dot[aria-pressed='true'] {
-  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
-}
-
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 
 .footer {

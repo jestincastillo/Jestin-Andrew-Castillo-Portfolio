@@ -6,7 +6,6 @@ import { designProjects, industryExperience, industryMoreNote } from '../content
 import { projectPath } from '../lib/paths'
 import type { Project } from '../types'
 import Icon from './Icon'
-import ThemeSwitcher from './ThemeSwitcher'
 import './Navbar.css'
 
 const linkClass = ({ isActive }: { isActive: boolean }) => `nav__link ${isActive ? 'is-active' : ''}`
@@ -70,7 +69,6 @@ export default function Navbar() {
         </nav>
 
         <div className="nav__right">
-          <ThemeSwitcher />
           <button
             type="button"
             className="nav__burger"

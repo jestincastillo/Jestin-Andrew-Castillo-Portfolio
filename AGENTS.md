@@ -18,8 +18,8 @@ A personal engineering portfolio: React 18 + TypeScript + Vite, React Router v6,
 - A project with `category: 'industry'` appears in the Industry Experience menu and home section, with its page at `/experience/<id>`; all others appear under Projects at `/projects/<id>`. Build links with `projectPath()` from `src/lib/paths.ts`, never by hand.
 - `src/types.ts`: `Project`, `ProjectSection`, `ProjectImage`, `ProjectLink` types
 - `src/pages/`: route components (`Home`, `Projects`, `ProjectDetail`, `Contact`, `NotFound`)
-- `src/components/`: shared UI (`Navbar`, `ProjectCard`, `Gallery`, `Lightbox`, `ImageFrame`, `Reveal`, `ThemeSwitcher`, `Icon`)
-- `src/styles/theme.css`: all colors, as CSS variables per theme (`graphite`, `midnight`, `sky`)
+- `src/components/`: shared UI (`Navbar`, `ProjectCard`, `Gallery`, `Lightbox`, `ImageFrame`, `Reveal`, `Icon`)
+- `src/styles/theme.css`: all colors, as CSS variables in a single white theme (there is no theme switcher)
 - `src/styles/global.css`: shared layout and component styles; `Navbar.css` and `ProjectDetail.css` sit next to their components
 - `public/images/<project>/`: project images
 
@@ -31,7 +31,7 @@ A personal engineering portfolio: React 18 + TypeScript + Vite, React Router v6,
 - Section options: `columns` (1–3 images per row), `centered: true` (center images and captions), `status: 'In Progress'` (badge next to the heading plus a dot in the sidebar).
 - `profile.resume` (`public/resume.pdf`) and `profile.photo` (`public/images/profile.jpg`) drive the home page "Download resume" button and headshot. Both stay hidden in production until the file exists (see `useFileExists`).
 - Use lowercase, dash-separated file names for images (GitHub Pages is case-sensitive).
-- **Colors:** only use CSS variables from `theme.css` (`var(--text)`, `var(--accent)`, etc.). Never hard-code colors in components. If you add a new variable, define it in all three themes.
+- **Colors:** only use CSS variables from `theme.css` (`var(--text)`, `var(--accent)`, etc.). Never hard-code colors in components. Add any new color as a variable in `theme.css`.
 - Keep the design simple and clean: no glassmorphism, bento grids, or heavy effects. Use the `Reveal` component for scroll-in animation.
 - Internal links use React Router `<Link>`/`<NavLink>`, never plain `<a href="/...">`, so the GitHub Pages base path keeps working.
 - Don't change `base` in `vite.config.ts`. The deploy workflow sets `BASE_PATH` automatically.

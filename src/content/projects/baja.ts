@@ -18,6 +18,7 @@ const baja = {
   title: 'Ergonomic Brake Pedal Assembly for a Baja SAE Off-Road Vehicle',
   summary:
     "Designing, analyzing, and building driver controls systems and safety protocols for UT Austin's single-seat off-road race vehicle, which competes in Baja SAE.",
+  status: 'In Progress', // label on the project card and Projects dropdown; delete when the project is done
   role: 'Lead Engineer',
   timeline: 'May 2025 – Present',
   team: 'Ergonomics',
@@ -83,8 +84,14 @@ const baja = {
     
     {
       title: 'CAD',
+      status: 'In Progress',
       paragraphs: [
-        'I modeled the assembly in SolidWorks, which I conducted continuous FEA analyses and CAD edits on until I landed on a durable, rule-compliant, personalized design. The assembly was checked against the full vehicle model for clearance through the full range of motion.',
+        "I modeled the assembly in SolidWorks, which I conducted continuous FEA analyses and CAD edits on until I landed on a durable, rule-compliant, personalized design. The assembly was checked against the full vehicle model for clearance through the full range of motion.",
+      ],
+      bullets: [
+        "The pedal arm and mounting bracket contain many pin-holes for adjustability, allowing drivers to quickly select their preferred setting upon switching with the previous driver at a pitstop.",
+        "The curved design of the arm allows for more efficient stress distrbution, ensuring the arm is the least likely to fail first.",
+        "I decided to use directly mounted brake fluid reservoirs for ease of manufacturability and to avoid our drivers' legs or feet from getting caught when attempting to egress the vehicle.",
       ],
       images: [
         { src: 'baja/cad-iso.jpg', caption: 'Final CAD model, Isometric View' },
@@ -96,6 +103,7 @@ const baja = {
     },
     {
       title: 'FEA',
+      status: 'In Progress',
       paragraphs: [
         'I ran static structural analyses in ANSYS for driver-applied load cases. Boundary conditions modeled include pin support at the base of the arm and the force exerted by the master cylinders back onto the pedal arm.',
         // 'A mesh convergence study confirmed the results were stable to within [X]%. The final design has a minimum factor of safety of [X] in the worst-case load case, with peak stress concentrated at [location], which I addressed by [adding a fillet / changing wall thickness / adding a gusset].',
@@ -113,15 +121,17 @@ const baja = {
         'The part was [machined / welded / waterjet-cut / printed] [in-house / with a sponsor]. [Describe any testing: fit checks on the car, physical load testing, or how it held up during practice runs and competition.]',
       ],
       images: [{ src: 'baja/manufactured.jpg', caption: 'Finished part installed on the car' }],
-    },
+    }, */
     {
       title: 'Results & Lessons Learned',
+      status: 'In Progress',
       bullets: [
-        '[Result: weight saved, failure eliminated, performance improvement]',
-        '[Lesson: something you would do differently next time]',
-        '[Lesson: a skill you developed, e.g. designing for manufacturability]',
+        'While my design was structurally sound, rule-compliant, and was capable of passing the technical inspection, many experienced teams and machinists advised me and my team  to purchase an off-the-shelf brake pedal for our first competition instead.',
+        'It is difficult for a first-year team to understand all of the impacts placed onto the brake pedal by both the driver and the vehicle due to the rugged terrain. Thus, more experienced teams suggested we analyze the effects of the 4-hour endurance rance onto a proven assembly before we use my designs.',
+        'At the Ohio 2026 competition, I noticed that the vehicle experiences more side-to-side impacts than I expected, and I am to solve this issue by increasing the thickness of the pedal and height of the mounting bracket.',
+        'After conducting more testing and analyses with our off-the-shelf brake pedal assembly, I aim to use this knowledge to improve upon my designs so we can bring it to the next competition.',
       ],
-    }, */
+    },
   ],
 } satisfies Project
 

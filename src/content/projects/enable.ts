@@ -71,8 +71,8 @@ const enable = {
         'In Bambu Studio, I scaled the base model to improve fit and proportions for our client. I kept critical features, such as pin holes and tendon channels, at fixed sizes so the hardware still fit after scaling.',
       ],
       images: [
-        { src: 'enable/cad-assembly.png', caption: 'Full hand assembly in CAD' },
-        { src: 'enable/cad-detail.png', caption: 'Detail: [modified feature]' },
+        { src: 'enable/slice1.jpg', caption: 'Hand Component in Bambu Studio' },
+        { src: 'enable/slice2.jpg', caption: '3D Printing Pathway Displayed in Bambu Studio' },
       ],
       centered: true
     },

@@ -3,6 +3,7 @@ import Icon from '../components/Icon'
 import ProfilePhoto from '../components/ProfilePhoto'
 import ProjectCard from '../components/ProjectCard'
 import ResumeButton from '../components/ResumeButton'
+import SkillsList from '../components/SkillsList'
 import Reveal from '../components/Reveal'
 import { profile } from '../content/profile'
 import { designProjects, industryExperience, industryMoreNote } from '../content/projects'
@@ -45,6 +46,9 @@ export default function Home() {
           <div className="container">
             <Reveal className="section__head">
               <h2>Industry experience</h2>
+              <Link to="/experience" className="text-link">
+                All industry experience <Icon name="arrowRight" size={16} />
+              </Link>
             </Reveal>
             <div className="card-grid">
               {industryExperience.map((project, i) => (
@@ -83,21 +87,13 @@ export default function Home() {
             {moreBio.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
+            <Link to="/about" className="text-link">
+              More about me <Icon name="arrowRight" size={16} />
+            </Link>
           </Reveal>
           <Reveal className="about__skills" delay={0.08}>
             <h2>Skills</h2>
-            {profile.skills.map((group) => (
-              <div key={group.group} className="skills__group">
-                <h3>{group.group}</h3>
-                <ul className="tags">
-                  {group.items.map((item, i) => (
-                    <li key={`${item}-${i}`} className="tag">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <SkillsList />
           </Reveal>
         </div>
       </section>

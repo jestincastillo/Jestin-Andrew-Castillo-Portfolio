@@ -25,6 +25,9 @@ export const projects: Project[] = [neurotech, baja, enable, agentic]
 /** Shown under the Industry Experience list. Set to '' to hide it. */
 export const industryMoreNote = 'More to come…'
 
+/** Shown under the Projects list. Set to '' to hide it. */
+export const projectsMoreNote = 'More to come…'
+
 /** Student and design-team projects (Projects menu and page). */
 export const designProjects = projects.filter((p) => p.category !== 'industry')
 

@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { profile } from '../content/profile'
-import { designProjects, industryExperience, industryMoreNote } from '../content/projects'
+import { designProjects, industryExperience, industryMoreNote, projectsMoreNote } from '../content/projects'
 import { projectPath } from '../lib/paths'
 import type { Project } from '../types'
 import Icon from './Icon'
@@ -29,8 +29,6 @@ export default function Navbar() {
     return () => document.removeEventListener('keydown', onKey)
   }, [mobileOpen])
 
-  const moreNote = industryMoreNote ? <p className="nav__menu-note">{industryMoreNote}</p> : null
-
   return (
     <header className="nav">
       <div className="container nav__inner">
@@ -43,23 +41,38 @@ export default function Navbar() {
             Home
           </NavLink>
 
+          <NavLink to="/about" className={linkClass}>
+            About Me
+          </NavLink>
+
           <NavDropdown
             id="industry-menu"
             label="Industry Experience"
-            active={pathname.startsWith('/experience')}
+            to="/experience"
             items={industryExperience}
-            footer={moreNote}
+            footer={
+              <>
+                {industryMoreNote && <p className="nav__menu-note">{industryMoreNote}</p>}
+                <Link to="/experience" className="nav__menu-all">
+                  View all industry experience <Icon name="arrowRight" size={14} />
+                </Link>
+              </>
+            }
           />
 
           <NavDropdown
             id="projects-menu"
             label="Projects"
             to="/projects"
+            align="right"
             items={designProjects}
             footer={
-              <Link to="/projects" className="nav__menu-all">
-                View all projects <Icon name="arrowRight" size={14} />
-              </Link>
+              <>
+                {projectsMoreNote && <p className="nav__menu-note">{projectsMoreNote}</p>}
+                <Link to="/projects" className="nav__menu-all">
+                  View all projects <Icon name="arrowRight" size={14} />
+                </Link>
+              </>
             }
           />
 
@@ -97,8 +110,13 @@ export default function Navbar() {
               <NavLink to="/" end className={linkClass}>
                 Home
               </NavLink>
+              <NavLink to="/about" className={linkClass}>
+                About Me
+              </NavLink>
 
-              <p className="nav__mobile-heading">Industry Experience</p>
+              <NavLink to="/experience" end className={linkClass}>
+                Industry Experience
+              </NavLink>
               <ul className="nav__mobile-projects">
                 {industryExperience.map((p) => (
                   <li key={p.id}>
@@ -122,6 +140,7 @@ export default function Navbar() {
                     </NavLink>
                   </li>
                 ))}
+                {projectsMoreNote && <li className="nav__mobile-note">{projectsMoreNote}</li>}
               </ul>
 
               <NavLink to="/contact" className={linkClass}>
@@ -146,10 +165,12 @@ interface NavDropdownProps {
   items: Project[]
   /** Optional content under the list, like a "View all" link or a note. */
   footer?: ReactNode
+  /** 'right' lines the menu up with the label's right edge, so it doesn't run off a narrow screen. */
+  align?: 'left' | 'right'
 }
 
 /** A desktop navbar item with a dropdown list of projects. Opens on hover (mouse) or click/tap. */
-function NavDropdown({ id, label, to, active = false, items, footer }: NavDropdownProps) {
+function NavDropdown({ id, label, to, active = false, items, footer, align = 'left' }: NavDropdownProps) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   // True when the mouse opened the menu, so the click that usually follows doesn't immediately close it.
@@ -226,7 +247,7 @@ function NavDropdown({ id, label, to, active = false, items, footer }: NavDropdo
         {open && (
           <motion.div
             id={id}
-            className="nav__menu"
+            className={`nav__menu ${align === 'right' ? 'nav__menu--right' : ''}`}
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}

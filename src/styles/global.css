@@ -434,12 +434,12 @@ code {
   padding: 20px 22px 22px;
 }
 
+/* Organization name, with the "In Progress" label (if any) always on its own line below it. */
 .card__top {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   margin-bottom: 0.5rem;
 }
 
@@ -723,6 +723,106 @@ code {
 @media (max-width: 820px) {
   .about {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ── About Me page ───────────────────────────────────────────────────────── */
+
+.about-page__head {
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 6vw, 72px);
+}
+
+.about-page__intro {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-page__intro p {
+  max-width: 62ch;
+}
+
+.about-page__title {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.about-page__intro .hero__actions {
+  margin-top: 1.75rem;
+}
+
+.about-page__section {
+  margin-top: clamp(56px, 8vw, 88px);
+}
+
+.leadership-list {
+  display: grid;
+  gap: 16px;
+}
+
+.leadership {
+  padding: clamp(20px, 3vw, 28px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.leadership__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-bottom: 12px;
+}
+
+.leadership__head .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.leadership__head h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.leadership__time {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.leadership__points {
+  margin: 0 0 1rem;
+  padding-left: 1.2em;
+}
+
+.leadership__points li {
+  margin-bottom: 6px;
+  padding-left: 4px;
+}
+
+.leadership__points li::marker {
+  color: var(--accent);
+}
+
+.about-page__skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 8px 32px;
+}
+
+@media (max-width: 760px) {
+  .about-page__head {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .about-page__head .hero__photo {
+    flex: none;
+    width: 150px;
   }
 }
 

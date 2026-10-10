@@ -42,8 +42,8 @@ function ProjectPage({ project }: { project: Project }) {
 
   return (
     <article className="container project">
-      <Link to={isIndustry ? '/' : '/projects'} className="text-link project__back">
-        <Icon name="arrowLeft" size={16} /> {isIndustry ? 'Home' : 'All projects'}
+      <Link to={isIndustry ? '/experience' : '/projects'} className="text-link project__back">
+        <Icon name="arrowLeft" size={16} /> {isIndustry ? 'All industry experience' : 'All projects'}
       </Link>
 
       <Reveal className="project__header">

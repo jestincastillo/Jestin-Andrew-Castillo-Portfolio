@@ -120,6 +120,11 @@
   box-shadow: var(--shadow);
 }
 
+.nav__menu--right {
+  left: auto;
+  right: -8px;
+}
+
 /* Invisible bridge so the menu doesn't close while the mouse crosses the gap. */
 .nav__menu::before {
   content: '';
@@ -176,6 +181,13 @@
   border-top: 1px solid var(--border);
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+/* When a "More to come…" note sits above it, the note's divider is enough. */
+.nav__menu-note + .nav__menu-all {
+  margin-top: 0;
+  padding-top: 4px;
+  border-top: 0;
 }
 
 .nav__menu-note {

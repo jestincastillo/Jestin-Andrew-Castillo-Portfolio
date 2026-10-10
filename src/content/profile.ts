@@ -17,6 +17,8 @@ export const profile = {
   ],
 
   email: 'jestin.andrew.castillo@gmail.com',
+  /** Shown on the Contact page exactly as written here. Set to '' to hide it. */
+  phone: '+1 (832)-404-9277',
   linkedin: 'https://www.linkedin.com/in/jestin-andrew-castillo/',
   github: 'https://github.com/jestincastillo',
   location: 'Houston, TX',

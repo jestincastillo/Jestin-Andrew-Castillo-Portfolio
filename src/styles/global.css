@@ -741,7 +741,10 @@ code {
 }
 
 .cta-band h2 {
-  margin-bottom: 0.25em;
+  margin: 0;
+  font-size: 1.035rem; /* one point larger than the button text */
+  font-weight: 400;
+  color: var(--text); /* same color as the About section text */
 }
 
 .cta-band p {

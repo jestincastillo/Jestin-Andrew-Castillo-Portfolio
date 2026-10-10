@@ -105,10 +105,7 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <Reveal className="cta-band">
-            <div>
-              <h2>Let's talk</h2>
-              <p>Open to internship, co-op, and research opportunities.</p>
-            </div>
+            <h2>Open to internship, co-op, and research opportunities.</h2>
             <Link to="/contact" className="btn btn--primary">
               Contact me <Icon name="arrowRight" size={16} />
             </Link>

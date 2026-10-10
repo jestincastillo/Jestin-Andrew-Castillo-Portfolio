@@ -34,7 +34,7 @@ const agentic = {
     },
     {
       title: 'Tools I Developed:',
-      bullets: ['Alternate Sourcing Engine - Scrapes the web to find alternate suppliers, allowing users to rank their priorities between pricing, lead time, and reliability', 'Workflow Mapper - Generates a workflow pattern for a given process and highlights the critical path and slack timeframes'],
+      bullets: ['Alternate Sourcing Engine - Scrapes the web to find alternate suppliers, allowing users to rank their priorities between pricing, lead time, and reliability. Ranks alternate suppliers on a scale from 0-100 based on user priorities and highlights unique features such as free shipping over a certain price.', 'Workflow Mapper - Generates a workflow pattern for a given process and highlights the critical path and slack timeframes. Allows users to edit the workflow by adding new tasks and an entirely new workflow if an assembly depends on more than one process. This tool also depicts a realistic timeframe for the generated/edited workflow as well as recommended next courses of action for the user. '],
     },
     {
       title: 'Images',

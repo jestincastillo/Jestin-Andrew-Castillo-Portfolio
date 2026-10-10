@@ -53,8 +53,8 @@ const enable = {
         "Scaling was based on measurements of the recipient's residual limb, with a scale factor of 10% to match their proportions, as a model the client could grow into is more beneficial than a model which is already too small for the client.",
       ],
       images: [
-        { src: 'enable/measurements.jpg', caption: 'Hand and forearm measurements used for scaling' },
-        { src: 'enable/design-comparison.png', caption: 'Comparison of candidate base designs' },
+        { src: 'enable/phoenix.jpg', caption: 'e-Nable Phoenix Hand Model' },
+        { src: 'enable/kwawu.jpg', caption: 'e-Nable Kwawu Arm Model' },
       ],
       centered: true
     },
@@ -83,17 +83,19 @@ const enable = {
         'Note: FDM parts are weaker between layers, so I [oriented the print / increased infill / added walls] to account for anisotropy.',
       ],
       images: [{ src: 'enable/fea.png', caption: 'Stress in the [component] under grip load' }],
-    },
+    }, */
     {
       title: 'Printing, Assembly & Fitting',
       paragraphs: [
-        'Parts were printed in [PLA / PETG] with [TPU] grip pads, then assembled with [elastic cord, braided line, and pins]. During the fitting session we [adjusted tendon tension / added padding / trimmed the gauntlet] so the hand closed reliably and felt comfortable.',
+        'Parts were printed in PETG with flexible velcro grip pads, then assembled with rubber bands and zip ties. During the fitting session we alternated between different rubber band stiffnesses and adjusted the tightness of the velcro strap so the hand closed reliably and felt comfortable.',
       ],
       images: [
-        { src: 'enable/printing.jpg', caption: 'Parts coming off the printer' },
-        { src: 'enable/fitting.jpg', caption: 'Fitting session' },
+        { src: 'enable/print1.jpg', caption: 'Final Product, Inner View' },
+        { src: 'enable/print2.jpg', caption: 'Final Product, Outer View (Client Name Censored For Privacy)' },
+        { src: 'enable/print3.jpg', caption: 'Grip Test, Water Bottle' },
       ],
-    },
+      centered: true
+    }, /*
     {
       title: 'Impact & Lessons Learned',
       bullets: [

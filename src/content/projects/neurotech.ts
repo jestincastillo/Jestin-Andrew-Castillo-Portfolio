@@ -40,8 +40,9 @@ const neurotech = {
       bullets: [
         'Design the prosthetic to be humanoid',
         'Create mechanisms that allow large ranges of motion',
-        'Support objects that weigh over 5 lbs',
+        'Carry objects that weigh over 5 lbs',
         'Support a variety of grip styles, from the typical cylindrical grasp to the tripod and key grips',
+        'Allow individual finger actuation for hand gestures',
         "Be 3D printable and repairable with the club's limited equipment",
       ],
     },

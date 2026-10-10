@@ -22,6 +22,10 @@ export default function Contact() {
 
   const methods: ContactMethod[] = [
     { icon: 'mail', label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
+    // tel: links need digits only, e.g. "+18324049277"; tapping it on a phone starts a call.
+    ...(profile.phone
+      ? [{ icon: 'phone' as const, label: 'Phone', value: profile.phone, href: `tel:+${profile.phone.replace(/\D/g, '')}` }]
+      : []),
     { icon: 'linkedin', label: 'LinkedIn', value: prettyUrl(profile.linkedin), href: profile.linkedin, external: true },
     { icon: 'github', label: 'GitHub', value: prettyUrl(profile.github), href: profile.github, external: true },
   ]
@@ -33,10 +37,10 @@ export default function Contact() {
     <div className="container page">
       <Reveal className="page__head">
         <p className="eyebrow">Contact</p>
-        <h1>Get in touch</h1>
+        <h1>Contact Me</h1>
         <p className="lead">
-          I'm happy to talk about engineering projects, internships, research, or anything on this site. Email is the best
-          way to reach me.
+          I'm happy to discuss engineering projects, internships, or anything on this site. Email is the best way to reach
+          me.
         </p>
       </Reveal>
 

@@ -31,7 +31,7 @@ export default function Home() {
                 View my projects <Icon name="arrowRight" size={16} />
               </Link>
               <Link to="/contact" className="btn btn--ghost">
-                Get in touch
+                Contact Me
               </Link>
               <ResumeButton />
             </Reveal>
@@ -107,7 +107,7 @@ export default function Home() {
           <Reveal className="cta-band">
             <div>
               <h2>Let's talk</h2>
-              <p>Open to internships, research, and design team collaborations.</p>
+              <p>Open to internship, co-op, and research opportunities.</p>
             </div>
             <Link to="/contact" className="btn btn--primary">
               Contact me <Icon name="arrowRight" size={16} />

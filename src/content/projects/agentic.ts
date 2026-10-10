@@ -34,17 +34,17 @@ const agentic = {
     },
     {
       title: 'Tools I Developed:',
-      bullets: ['Operational Impact Simulator - Displays possible conflicts between components in an assembly', 'Alternate Sourcing Engine - Scrapes the web to find alternate suppliers, allowing users to rank their priorities between pricing, lead time, and reliability', 'Workflow Mapper - Generates a workflow pattern for a given process and highlights the critical path and slack timeframes'],
+      bullets: ['Alternate Sourcing Engine - Scrapes the web to find alternate suppliers, allowing users to rank their priorities between pricing, lead time, and reliability', 'Workflow Mapper - Generates a workflow pattern for a given process and highlights the critical path and slack timeframes'],
     },
     {
       title: 'Images',
       paragraphs: [''],
       images: [
-        { src: 'agentic/process-1.png', caption: 'Operational Impact Simulator' },
-        { src: 'agentic/process-2.png', caption: 'Alternate Sourcing Engine' },
-        { src: 'agentic/process-3.png', caption: 'Workflow Mapper' },
+        { src: 'agentic/process-1.jpg', caption: 'Alternate Sourcing Engin, Inputs' },
+        { src: 'agentic/process-2.jpg', caption: 'Alternate Sourcing Engine, Outputs' },
+        { src: 'agentic/process-3.jpg', caption: 'Workflow Mapper, Based On A Formula SAE Vehicle' },
       ],
-      columns: 3, // all three side by side (use 2 for bigger images, with the third centered below)
+      columns: 1, // all three side by side (use 2 for bigger images, with the third centered below)
       centered: true, // centers the images and their captions
     },
     {

@@ -211,6 +211,43 @@ code {
   transform: none;
 }
 
+/* "In Progress" label (set with `status` on a project or section in its content file). */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 11px;
+  border: 1px solid var(--status-border);
+  border-radius: 999px;
+  background: var(--status-soft);
+  color: var(--status);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.status-badge--small {
+  gap: 5px;
+  padding: 2px 8px;
+  font-size: 0.62rem;
+}
+
+.status-badge--small::before {
+  width: 5px;
+  height: 5px;
+}
+
 /* Hidden on screen but still read by screen readers. */
 .visually-hidden {
   position: absolute;
@@ -379,6 +416,11 @@ code {
   box-shadow: var(--shadow);
 }
 
+/* Cover images are shown whole (no cropping); any leftover space shows the frame background. */
+.card__media.frame--contain {
+  aspect-ratio: 16 / 10;
+}
+
 .card__media {
   border-radius: 0;
   border: 0;
@@ -392,8 +434,17 @@ code {
   padding: 20px 22px 22px;
 }
 
-.card__body .eyebrow {
+.card__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 10px;
   margin-bottom: 0.5rem;
+}
+
+.card__body .eyebrow {
+  margin-bottom: 0;
 }
 
 .card__title {

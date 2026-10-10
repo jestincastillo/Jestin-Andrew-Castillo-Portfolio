@@ -56,6 +56,7 @@ const enable = {
         { src: 'enable/measurements.jpg', caption: 'Hand and forearm measurements used for scaling' },
         { src: 'enable/design-comparison.png', caption: 'Comparison of candidate base designs' },
       ],
+      centered: true
     },
     {
       /*title: 'Design Sketches',
@@ -73,6 +74,7 @@ const enable = {
         { src: 'enable/cad-assembly.png', caption: 'Full hand assembly in CAD' },
         { src: 'enable/cad-detail.png', caption: 'Detail: [modified feature]' },
       ],
+      centered: true
     },
     /*{
       title: 'FEA',
@@ -91,7 +93,7 @@ const enable = {
         { src: 'enable/printing.jpg', caption: 'Parts coming off the printer' },
         { src: 'enable/fitting.jpg', caption: 'Fitting session' },
       ],
-    },*/
+    },
     {
       title: 'Impact & Lessons Learned',
       bullets: [
@@ -99,7 +101,7 @@ const enable = {
         '[Lesson: designing with and for a real user]',
         '[Lesson: printing tolerances, part orientation, or iteration speed]',
       ],
-    },
+    }, */
   ],
 } satisfies Project
 

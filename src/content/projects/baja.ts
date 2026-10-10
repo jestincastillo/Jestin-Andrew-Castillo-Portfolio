@@ -22,7 +22,7 @@ const baja = {
   timeline: 'May 2025 – Present',
   team: 'Ergonomics',
   tags: ['Vehicle Design', 'CAD', 'FEA', 'Manufacturing'],
-  tools: ['SolidWorks', 'SolidWorks Simulation', 'Manual Milling'],
+  tools: ['SolidWorks', 'SolidWorks Simulation', 'ANSYS', 'Manual Milling'],
   cover: { src: 'baja/cover.jpg', caption: 'The Longhorn Baja Racing car' },
 
   highlights: [
@@ -51,11 +51,11 @@ const baja = {
       bullets: [
         'Withstand 450 lbf / 2000 N loads from any given driver',
         'Weigh within 0.5 lbs of 3 lbs (most commercial racing brake pedal assemblies weigh 3 lbs)',
-        'Be manufacturable in-house with [mill / lathe / waterjet / welding fixture]',
+        'Be manufacturable in-house with manual/CNC mill and lathe',
         'Fit within the existing chassis, steering, suspension packaging and comply with the Baja SAE 2026 rulebook',
       ],
     },
-    {
+    /* {
       title: 'Preliminary Design',
       paragraphs: [
         'I started by consulting other competing teams to gain advice for how they tackled the same issue before beginning initial skeches.',
@@ -65,42 +65,49 @@ const baja = {
         { src: 'baja/preliminary-sketch.png', caption: "Initial Sketch based on Proven Teams' Expertise"},
         // { src: 'baja/hand-calcs.jpg', caption: 'First-pass hand calculations' },
       ],
-    }, /*
+    }, */
     {
       
       title: 'Design Sketches',
-      paragraphs: ['Early sketches exploring geometry, load paths, and how the part mounts to the rest of the car.'],
-      images: [
-        { src: 'baja/sketch-1.jpg', caption: 'Concept sketch: [describe]' },
-        { src: 'baja/sketch-2.jpg', caption: 'Concept sketch: [describe]' },
-        { src: 'baja/sketch-3.jpg', caption: 'Selected concept with key dimensions' },
+      paragraphs: [
+        'I started by consulting other competing teams to gain advice for how they tackled the same issue before beginning initial skeches.',
+        'Hand calculations for mechanical advantages and pedal ratios gave me initial dimensions to match during the initial CAD designs.'
       ],
-      columns: 3,
+      images: [
+        { src: 'baja/sketch-1.jpg', caption: 'Side View, Adjustable Pin Setup for Different Settings' },
+        { src: 'baja/sketch-2.jpg', caption: 'Front View, Depicts Width and Fitment Within Chassis' },
+      ],
+      columns: 2,
+      centered: true
     },
-    */
+    
     {
       title: 'CAD',
       paragraphs: [
-        'I modeled the [component] in SolidWorks as a fully parametric part so key dimensions could be changed quickly as the FEA results came in. The assembly was checked against the full vehicle model for clearance through the full range of [suspension travel / steering lock].',
+        'I modeled the assembly in SolidWorks, which I conducted continuous FEA analyses and CAD edits on until I landed on a durable, rule-compliant, personalized design. The assembly was checked against the full vehicle model for clearance through the full range of motion.',
       ],
       images: [
-        { src: 'baja/cad-iso.png', caption: 'Final CAD model, isometric view' },
-        { src: 'baja/cad-assembly.png', caption: 'Component in the full vehicle assembly' },
-        { src: 'baja/drawing.png', caption: 'Manufacturing drawing' },
+        { src: 'baja/cad-iso.jpg', caption: 'Final CAD model, Isometric View' },
+        { src: 'baja/cad-assembly1.jpg', caption: 'Brake Pedal Side View in Chassis' },
+        { src: 'baja/cad-assembly2.jpg', caption: 'Brake Pedal in Full Vehicle Assembly' },
       ],
+      columns: 1,
+      centered: true
     },
     {
       title: 'FEA',
       paragraphs: [
-        'I ran static structural analyses in [SolidWorks Simulation / ANSYS] for [front impact / bump / braking / cornering] load cases derived from [hand calculations / data from previous seasons]. Boundary conditions modeled [describe fixtures, e.g. bolted joints as fixed hinges].',
-        'A mesh convergence study confirmed the results were stable to within [X]%. The final design has a minimum factor of safety of [X] in the worst-case load case, with peak stress concentrated at [location], which I addressed by [adding a fillet / changing wall thickness / adding a gusset].',
+        'I ran static structural analyses in ANSYS for driver-applied load cases. Boundary conditions modeled include pin support at the base of the arm and the force exerted by the master cylinders back onto the pedal arm.',
+        // 'A mesh convergence study confirmed the results were stable to within [X]%. The final design has a minimum factor of safety of [X] in the worst-case load case, with peak stress concentrated at [location], which I addressed by [adding a fillet / changing wall thickness / adding a gusset].',
       ],
       images: [
-        { src: 'baja/fea-stress.png', caption: 'Von Mises stress, [load case]' },
-        { src: 'baja/fea-fos.png', caption: 'Factor of safety plot' },
+        { src: 'baja/fea-von-mises.jpg', caption: 'Von-Mises Stress, 2000 N Load Case, Applied Near The Top' },
+        { src: 'baja/fea-total-deformation.jpg', caption: 'Total Deformation Simulation, 2000 N Load Case, Applied Near The Top' },
       ],
+      columns: 1,
+      centered: true
     },
-    {
+    /* {
       title: 'Manufacturing & Testing',
       paragraphs: [
         'The part was [machined / welded / waterjet-cut / printed] [in-house / with a sponsor]. [Describe any testing: fit checks on the car, physical load testing, or how it held up during practice runs and competition.]',
@@ -114,7 +121,7 @@ const baja = {
         '[Lesson: something you would do differently next time]',
         '[Lesson: a skill you developed, e.g. designing for manufacturability]',
       ],
-    },
+    }, */
   ],
 } satisfies Project
 

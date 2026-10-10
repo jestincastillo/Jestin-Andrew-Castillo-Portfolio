@@ -97,7 +97,7 @@ function ProjectPage({ project }: { project: Project }) {
 
       {project.cover && (
         <Reveal className="project__cover">
-          <ImageFrame image={project.cover} fit="cover" eager />
+          <ImageFrame image={project.cover} fit="contain" eager />
         </Reveal>
       )}
 

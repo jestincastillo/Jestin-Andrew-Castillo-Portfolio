@@ -47,6 +47,8 @@ export interface Project {
   category?: 'project' | 'industry'
   /** Organization or team, e.g. "Longhorn Baja Racing". */
   org: string
+  /** Optional label on the project card and navbar dropdown, e.g. 'In Progress'. */
+  status?: string
   title: string
   /** One or two sentences. Shown on project cards and at the top of the project page. */
   summary: string

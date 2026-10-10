@@ -118,6 +118,7 @@ export default function Navbar() {
                   <li key={p.id}>
                     <NavLink to={projectPath(p)} className={linkClass}>
                       {p.org}
+                      {p.status && <span className="status-badge status-badge--small nav__mobile-status">{p.status}</span>}
                     </NavLink>
                   </li>
                 ))}
@@ -236,7 +237,10 @@ function NavDropdown({ id, label, to, active = false, items, footer }: NavDropdo
                 {items.map((p) => (
                   <li key={p.id}>
                     <NavLink to={projectPath(p)} className={({ isActive }) => `nav__menu-item ${isActive ? 'is-active' : ''}`}>
-                      <span className="nav__menu-org">{p.org}</span>
+                      <span className="nav__menu-org">
+                        {p.org}
+                        {p.status && <span className="status-badge status-badge--small">{p.status}</span>}
+                      </span>
                       <span className="nav__menu-title">{p.title}</span>
                     </NavLink>
                   </li>

@@ -9,12 +9,13 @@ const neurotech = {
   title: '6-Axis Robotic Arm Prosthetic',
   summary:
     'Designing the mechanical linkages, electronic housing components, and thermal dissipation systems for a 6-axis bionic limb capable of gripping objects over five pounds and creating realistic hand gestures, actuated via an EMG-reading Mudra Link armband worn by the prosthetic user, designed to be used on at a desk or other flat surface.',
+  status: 'In Progress', // label on the project card and Projects dropdown; delete when the project is done
   role: 'Mechanical Lead Engineer',
   timeline: 'September 2026 – Present',
   team: 'Prosthetic, Mechanical',
-  tags: ['Neurotech', 'CAD', 'Prototyping'],
+  tags: ['Assistive Tech', 'CAD', 'Prototyping'],
   tools: ['SolidWorks', 'SolidWorks Simulation', '3D printing'],
-  // cover: { src: 'neurotech/cover.jpg', caption: 'Prototype headset' },
+  cover: { src: 'neurotech/cover.jpg' /* , caption: 'Prototype headset' */ },
 
   /*
   highlights: [
@@ -30,8 +31,8 @@ const neurotech = {
     {
       title: 'Overview',
       paragraphs: [
-        'Longhorn Neurotech is a student organization at UT Austin focused on neurotechnology and brain-computer interfaces (BCIs). Teams combine hardware, signal processing, and software to build systems that read brain or muscle activity and use it to control devices.',
-        'I lead the mechanical subteam of the remotely controlled prosthetic arm project, focusing my team on mechanical design, failure modes and effects analysis, and heat transfer systems to ensure our 3D printed product can withstand all potential stresses with a design factor of safety greater than 2.',
+        'Longhorn Neurotech is a student organization at UT Austin focused on brain-computer interfaces (BCIs) and assistive devices. Teams combine hardware, signal processing, and software to build systems that read brain or muscle activity and use it to control devices.',
+        'I lead the mechanical subteam of the prosthetic arm project, focusing my team on mechanical design, failure modes and effects analysis, and heat transfer systems to ensure our 3D printed product can withstand all potential stresses while remaining humanoid in style.',
       ],
     },
     {
@@ -50,49 +51,56 @@ const neurotech = {
         'I looked at existing open-source headsets such as the Ruka V2 robotic hand, then sketched concepts for actuation mechanisms based on the limited materials we have access to as a student organization.',
       ],
       images: [{ src: 'neurotech/concepts.jpg', caption: 'Early Concept Sketch' }],
+      centered: true
     },
     {
       title: 'Design Sketches',
+      status: 'In Progress',
       images: [
         { src: 'neurotech/sketch-1.jpg', caption: 'Preliminary Finger Model Sketches' },
         { src: 'neurotech/sketch-2.jpg', caption: 'Gripping Actuation Concepts' },
+        { src: 'neurotech/sketch-3.jpg', caption: 'Opposable Thumb Linkage Concept' },
       ],
+      columns: 1,
+      centered: true
     },
     {
       title: 'CAD',
       status: 'In Progress', // delete this line when the section is finished
-      paragraphs: [
+      /* paragraphs: [
         'I modeled [the frame and electrode holders] in [SolidWorks / Fusion 360], placing mounting points from a scaled head model so each electrode lands on its 10-20 position. [Describe the adjustment mechanism, e.g. a threaded holder, a ratchet, or a sliding rail.]',
-      ],
+      ], */
       images: [
-        { src: 'neurotech/cad-headset.png', caption: 'Headset CAD assembly' },
-        { src: 'neurotech/cad-holder.png', caption: 'Electrode holder detail' },
+        { src: 'neurotech/cad-base1.jpg', caption: 'Prosthetic Base Assembly, Isometric View' },
+        { src: 'neurotech/cad-base2.png', caption: 'Prosthetic Base Gear System' },
       ],
+      centered: true
     },
-    {
+    /* {
       title: 'FEA',
       status: 'In Progress',
       paragraphs: [
         '[If applicable] I used FEA to size the flexible arms so they deflect enough to fit different head shapes while applying about [X] N of contact force, and stay below the fatigue limit of [PLA / PETG / nylon]. [Describe result.]',
       ],
       images: [{ src: 'neurotech/fea-arm.png', caption: 'Deflection of a flexible arm under contact load' }],
-    },
+    }, */
     {
       title: 'Prototyping & Testing',
       status: 'In Progress',
-      paragraphs: [
+      /* paragraphs: [
         'We printed and assembled [N] prototypes and tested them on team members for fit, comfort over [X] minutes, and signal quality. [Describe what you measured, e.g. electrode impedance or noise levels, and what changed between versions.]',
-      ],
+      ], */
       images: [
-        { src: 'neurotech/prototype.jpg', caption: 'Printed prototype' },
-        { src: 'neurotech/eeg-signal.png', caption: 'Sample EEG recording' },
-      ],
+        { src: 'neurotech/baseprototype1.jpg', caption: 'Base Prototype, Arm Rotation About z-axis' },
+        { src: 'neurotech/baseprototype2.jpg', caption: 'Base Prototype, Top Casing Removed' },
+      ], 
+      centered: true
     },
-    {
+    /* { 
       title: 'Next Steps',
       status: 'In Progress',
       bullets: ['[Next iteration goal]', '[Integration with the signal-processing pipeline]', '[What you learned]'],
-    },
+    }, */
   ],
 } satisfies Project
 

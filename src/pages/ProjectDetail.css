@@ -53,7 +53,7 @@
   margin-bottom: clamp(40px, 6vw, 64px);
 }
 
-.project__cover .frame--cover {
+.project__cover .frame {
   aspect-ratio: 21 / 9;
 }
 
@@ -172,32 +172,6 @@
   gap: 8px 14px;
 }
 
-/* "In Progress" label next to a section heading (set with `status` in the content file). */
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 4px 11px;
-  border: 1px solid var(--status-border);
-  border-radius: 999px;
-  background: var(--status-soft);
-  color: var(--status);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.status-badge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: currentColor;
-}
-
 .project__bullets {
   margin: 0 0 1em;
   padding-left: 1.2em;
@@ -265,7 +239,7 @@
     display: none;
   }
 
-  .project__cover .frame--cover {
+  .project__cover .frame {
     aspect-ratio: 16 / 9;
   }
 }

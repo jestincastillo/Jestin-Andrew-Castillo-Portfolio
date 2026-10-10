@@ -151,6 +151,9 @@
 }
 
 .nav__menu-org {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: var(--heading);
   font-weight: 500;
   font-size: 0.95rem;
@@ -234,6 +237,11 @@
 .nav__mobile-projects .nav__link {
   font-size: 0.9rem;
   padding: 7px 12px;
+}
+
+.nav__mobile-status {
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
 .nav__mobile-heading {

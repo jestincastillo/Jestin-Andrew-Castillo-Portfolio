@@ -29,4 +29,10 @@ function spaFallback(): Plugin {
 export default defineConfig({
   base,
   plugins: [react(), spaFallback()],
+  server: {
+    // This project lives in OneDrive, which can hide file saves from the normal
+    // file watcher. Polling checks for changes every 300 ms so Ctrl+S always
+    // updates the browser.
+    watch: { usePolling: true, interval: 300 },
+  },
 })

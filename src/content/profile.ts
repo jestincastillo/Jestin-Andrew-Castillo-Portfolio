@@ -12,7 +12,7 @@ export const profile = {
 
   /** Each string is one paragraph on the home page. */
   bio: [
-    "I'm a mechanical engineering student at The University of Texas at Austin who likes taking an idea from a rough sketch to a part I can hold, test, and improve upon.",
+    "I'm a mechanical engineering student at The University of Texas at Austin who likes taking an idea from a rough sketch to an assembly I can hold, test, and improve upon.",
     'Across Longhorn Baja Racing, Longhorn Neurotech, and e-NABLE @ UT Austin, I have worked through the full design loop: defining requirements, sketching concepts, modeling in CAD, checking designs with FEA, and building and testing prototypes.',
   ],
 
@@ -42,6 +42,6 @@ export const profile = {
     { group: 'Analysis', items: ['FEA (SolidWorks Simulation)', 'Hand Calculations', 'Python', 'MATLAB'] },
     { group: 'Fabrication', items: ['3D printing (FDM)', 'Machining', 'Prototyping'] },
     { group: 'Certifications', items: ['EKG Technician', 'Clinical Medical Assistant', 'Python Programming']},
-    { group: 'Other', items: ['Technical writing', 'Design Reviews', 'Team Collaboration'] },
+    { group: 'Other', items: ['Technical writing', 'Design Reviews', 'Team Leadership', 'Team Collaboration'] },
   ],
 }

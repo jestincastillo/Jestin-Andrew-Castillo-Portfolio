@@ -1,6 +1,6 @@
 import ProjectCard from '../components/ProjectCard'
 import Reveal from '../components/Reveal'
-import { designProjects } from '../content/projects'
+import { designProjects, projectsMoreNote } from '../content/projects'
 import { usePageTitle } from '../lib/usePageTitle'
 
 export default function Projects() {
@@ -23,6 +23,7 @@ export default function Projects() {
           </Reveal>
         ))}
       </div>
+      {projectsMoreNote && <p className="more-note">{projectsMoreNote}</p>}
     </div>
   )
 }

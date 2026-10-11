@@ -123,7 +123,7 @@ const baja = {
     }, */
     {
       title: 'Results & Next Steps',
-      status: 'In Progress',
+      //status: 'In Progress',
       bullets: [
         'While my design was structurally sound, rule-compliant, and capable of passing the technical inspection, many experienced teams and machinists advised me and my team to purchase an off-the-shelf brake pedal for our first competition instead.',
         'It is difficult for a first-year team to understand all of the impacts placed onto the brake pedal by both the driver and the vehicle due to the rugged terrain. Thus, more experienced teams suggested we analyze the effects of the 4-hour endurance race on a proven assembly before we use my designs.',

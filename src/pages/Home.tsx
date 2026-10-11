@@ -7,7 +7,7 @@ import SkillsList from '../components/SkillsList'
 import Reveal from '../components/Reveal'
 import { getLeadership } from '../content/about'
 import { profile } from '../content/profile'
-import { designProjects, industryExperience, industryMoreNote } from '../content/projects'
+import { designProjects, industryExperience, industryMoreNote, projectsMoreNote } from '../content/projects'
 import { projectPath } from '../lib/paths'
 import { usePageTitle } from '../lib/usePageTitle'
 
@@ -89,6 +89,7 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+          {projectsMoreNote && <p className="more-note">{projectsMoreNote}</p>}
         </div>
       </section>
 

@@ -14,7 +14,7 @@ const agentic = {
   summary: 'An autonomous all-in-one platform for engineering teams to track purchased parts, component dependencies, workflow patterns, and potential impacts to an assembly.',
   role: 'Applied AI Engineering Intern',
   timeline: 'May – August 2026',
-  tags: [],
+  tags: ['Generative AI', 'Supply Chain', 'Customer Discovery'],
   // tools: ['[Tool 1]', '[Tool 2]'],
   cover: { src: 'agentic/cover.jpg', caption: '[Cover image]' },
 
@@ -49,7 +49,10 @@ const agentic = {
     },
     {
       title: 'Results',
-      bullets: ['Optimized Baja SAE racecar budget by 10.2% and reduced critical path component delivery by 10 days', 'This experience provided deep insight into supply chain dynamics, illustrating how vendor lead times and critical component dependencies directly dictate overall assembly schedules. This opportunity taught me the various events that may impact the way components reach an engineering team and how component dependencies affect the production of an assembly as a whole, and the benefits of being able to track these events down to a microscopic level. '],
+      bullets: [
+        'Optimized Baja SAE racecar budget by 10.2% and reduced critical path component delivery by 10 days',
+        'This experience provided deep insight into supply chain dynamics, illustrating how vendor lead times and critical component dependencies directly dictate overall assembly schedules. This opportunity taught me the various events that may impact the way components reach an engineering team and how component dependencies affect the production of an assembly as a whole, and the benefits of being able to track these events down to a microscopic level. '
+      ],
     },
   
   ],

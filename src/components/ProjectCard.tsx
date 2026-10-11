@@ -10,7 +10,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <ImageFrame image={project.cover} fit="contain" className="card__media" />
       <div className="card__body">
         <div className="card__top">
-          <p className="eyebrow">{project.org}</p>
+          <p className="eyebrow eyebrow--org">{project.org}</p>
           {project.status && <span className="status-badge">{project.status}</span>}
         </div>
         <h3 className="card__title">{project.title}</h3>

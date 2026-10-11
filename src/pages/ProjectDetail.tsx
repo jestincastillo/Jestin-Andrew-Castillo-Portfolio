@@ -47,7 +47,7 @@ function ProjectPage({ project }: { project: Project }) {
       </Link>
 
       <Reveal className="project__header">
-        <p className="eyebrow">{project.org}</p>
+        <p className="eyebrow eyebrow--org">{project.org}</p>
         <h1>{project.title}</h1>
         <p className="lead">{project.summary}</p>
 

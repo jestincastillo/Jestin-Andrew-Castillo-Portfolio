@@ -53,7 +53,7 @@ export default function About() {
                 <article className="leadership">
                   <div className="leadership__head">
                     <div>
-                      <p className="eyebrow">{project.org}</p>
+                      <p className="eyebrow eyebrow--org">{project.org}</p>
                       <h3>{project.role}</h3>
                     </div>
                     <span className="leadership__time">{project.timeline}</span>

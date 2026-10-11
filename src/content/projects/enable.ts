@@ -8,7 +8,7 @@ const enable = {
   org: 'e-NABLE at UT Austin',
   title: 'Custom 3D-Printed Prosthetic Hand',
   summary:
-    'Designing and 3D printing a low-cost, body-powered prosthetic hand tailored to a recipient with an upper-limb difference.',
+    'Designing and 3D printing a low-cost, body-powered prosthetic hand tailored to a young recipient with an upper-limb difference.',
   role: 'Test Hands Team Lead | International Hands Member',
   timeline: 'October 2025 - October 2026',
   team: 'Test Hands',

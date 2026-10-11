@@ -13,7 +13,7 @@ const neurotech = {
   role: 'Prosthetic Mechanical Lead Engineer',
   timeline: 'September 2026 – Present',
   team: 'Prosthetic, Mechanical',
-  tags: ['Assistive Tech', 'CAD', 'Prototyping'],
+  tags: ['Assistive Tech', 'CAD', 'Prototyping', '3D Printing', 'User-Centered Design'],
   tools: ['SolidWorks', 'SolidWorks Simulation', '3D printing'],
   cover: { src: 'neurotech/cover.jpg' /* , caption: 'Prototype headset' */ },
 

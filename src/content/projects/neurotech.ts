@@ -8,7 +8,7 @@ const neurotech = {
   org: 'Longhorn Neurotech',
   title: '6-Axis Robotic Arm Prosthetic',
   summary:
-    'Designing the mechanical linkages, electronic housing components, and thermal dissipation systems for a 6-axis bionic limb capable of gripping objects over five pounds and creating realistic hand gestures, actuated via an EMG-reading Mudra Link armband worn by the prosthetic user, designed to be used on a desk or other flat surface.',
+    'Designing the mechanical linkages, electronic housing components, and thermal dissipation systems for a desk-mounted 6-axis bionic limb. The prosthetic arm is actuated via an EMG-reading Mudra Link armband, worn by the user rather than a physically worn prosthetic.',
   status: 'In Progress', // label on the project card and Projects dropdown; delete when the project is done
   role: 'Prosthetic Mechanical Lead Engineer',
   timeline: 'September 2026 – Present',
@@ -31,7 +31,7 @@ const neurotech = {
     {
       title: 'Overview',
       paragraphs: [
-        'Longhorn Neurotech is a student organization at UT Austin focused on brain-computer interfaces (BCIs) and assistive devices. Teams combine hardware, signal processing, and software to build systems that read brain or muscle activity and use it to control devices.',
+        'Longhorn Neurotech is a student organization at UT Austin focused on brain-computer interfaces (BCIs) and assistive devices. Technical teams combine hardware, signal processing, and software to build systems that read brain or muscle activity and use it to control devices, showcased to judges at a competition at the end of every semester.',
         'I lead the mechanical subteam of the prosthetic arm project, focusing my team on mechanical design, failure modes and effects analysis, and heat transfer systems to ensure our 3D printed product can withstand all potential stresses while remaining humanoid in style.',
       ],
     },
@@ -49,14 +49,14 @@ const neurotech = {
     {
       title: 'Preliminary Design',
       paragraphs: [
-        'I looked at existing open-source headsets such as the Ruka V2 robotic hand, then sketched concepts for actuation mechanisms based on the limited materials we have access to as a student organization.',
+        'I looked at existing open-source upper-limb prosthetics such as the Ruka V2 robotic hand, then sketched concepts for actuation mechanisms based on the limited materials we have access to as a student organization.',
       ],
       images: [{ src: 'neurotech/concepts.jpg', caption: 'Early Concept Sketch' }],
       centered: true
     },
     {
       title: 'Design Sketches',
-      status: 'In Progress',
+      // status: 'In Progress',
       images: [
         { src: 'neurotech/sketch-1.jpg', caption: 'Preliminary Finger Model Sketches' },
         { src: 'neurotech/sketch-2.jpg', caption: 'Gripping Actuation Concepts' },
@@ -67,10 +67,10 @@ const neurotech = {
     },
     {
       title: 'CAD',
-      status: 'In Progress', // delete this line when the section is finished
-      /* paragraphs: [
-        'I modeled [the frame and electrode holders] in [SolidWorks / Fusion 360], placing mounting points from a scaled head model so each electrode lands on its 10-20 position. [Describe the adjustment mechanism, e.g. a threaded holder, a ratchet, or a sliding rail.]',
-      ], */
+      // status: 'In Progress', // delete this line when the section is finished
+      paragraphs: [
+        'We are still in the early stage of design, so the only CAD file I have is my first prototype of our base. Using a simple two-gear setup, a motor placed on the top of the base rotates a gear from inside the casing which rotates another gear to incur a rotation of the entire arm along the z-axis.',
+      ],
       images: [
         { src: 'neurotech/cad-base1.jpg', caption: 'Prosthetic Base Assembly, Isometric View' },
         { src: 'neurotech/cad-base2.png', caption: 'Prosthetic Base Gear System' },
@@ -87,10 +87,10 @@ const neurotech = {
     }, */
     {
       title: 'Prototyping & Testing',
-      status: 'In Progress',
-      /* paragraphs: [
-        'We printed and assembled [N] prototypes and tested them on team members for fit, comfort over [X] minutes, and signal quality. [Describe what you measured, e.g. electrode impedance or noise levels, and what changed between versions.]',
-      ], */
+      // status: 'In Progress',
+      paragraphs: [
+        'As our first prototype, I focused more on depicting the size of the base to visualize how the rest of the prosthetic should be sized. In future designs and prototypes, I will implement housing for electrical components within the base to increase the weight and stability of the foundation.',
+      ],
       images: [
         { src: 'neurotech/baseprototype1.jpg', caption: 'Base Prototype, Arm Rotation About z-axis' },
         { src: 'neurotech/baseprototype2.jpg', caption: 'Base Prototype, Top Casing Removed' },

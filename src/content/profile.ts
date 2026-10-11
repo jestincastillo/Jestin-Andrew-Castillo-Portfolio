@@ -6,13 +6,16 @@
 export const profile = {
   name: 'Jestin Andrew Castillo',
   /** Shown under your name on the home page. */
-  title: 'Mechanical Engineering Student · The University of Texas at Austin',
+  title: 'B.S. Mechanical Engineering | The University of Texas at Austin, Dec 2027',
   /** One line used in the browser tab and footer. */
   tagline: 'Design, analysis, and hands-on builds.',
 
-  /** Each string is one paragraph on the home page. */
-  bio: [
+  /** Opening paragraph of the About Me page (not shown on the home page). */
+  intro:
     "I'm a mechanical engineering student at The University of Texas at Austin who likes taking an idea from a rough sketch to an assembly I can hold, test, and improve upon.",
+
+  /** Each string is one paragraph, shown in the home page's About section and on the About Me page. */
+  bio: [
     'Across Longhorn Baja Racing, Longhorn Neurotech, and e-NABLE @ UT Austin, I have worked through the full design loop: defining requirements, sketching concepts, modeling in CAD, checking designs with FEA, and building and testing prototypes.',
   ],
 

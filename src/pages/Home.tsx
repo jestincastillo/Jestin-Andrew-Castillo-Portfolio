@@ -5,13 +5,15 @@ import ProjectCard from '../components/ProjectCard'
 import ResumeButton from '../components/ResumeButton'
 import SkillsList from '../components/SkillsList'
 import Reveal from '../components/Reveal'
+import { getLeadership } from '../content/about'
 import { profile } from '../content/profile'
 import { designProjects, industryExperience, industryMoreNote } from '../content/projects'
+import { projectPath } from '../lib/paths'
 import { usePageTitle } from '../lib/usePageTitle'
 
 export default function Home() {
   usePageTitle()
-  const [intro, ...moreBio] = profile.bio
+  const leadership = getLeadership()
 
   return (
     <>
@@ -24,8 +26,18 @@ export default function Home() {
               <h1 className="hero__name">{profile.name}</h1>
               <p className="hero__title">{profile.title}</p>
             </Reveal>
+            {/* Leadership roles (same entries as the About Me page, from src/content/about.ts). */}
             <Reveal delay={0.08}>
-              <p className="hero__bio">{intro}</p>
+              <ul className="hero__roles">
+                {leadership.map(({ project }) => (
+                  <li key={project.id}>
+                    <span className="hero__role-title">{project.role.trim()}</span>
+                    <Link to={projectPath(project)} className="hero__role-org">
+                      {project.org}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </Reveal>
             <Reveal delay={0.16} className="hero__actions">
               <Link to="/projects" className="btn btn--primary">
@@ -84,7 +96,7 @@ export default function Home() {
         <div className="container about">
           <Reveal className="about__text">
             <h2>About</h2>
-            {moreBio.map((paragraph, i) => (
+            {profile.bio.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
             <Link to="/about" className="text-link">

@@ -4,23 +4,17 @@ import ProfilePhoto from '../components/ProfilePhoto'
 import ResumeButton from '../components/ResumeButton'
 import Reveal from '../components/Reveal'
 import SkillsList from '../components/SkillsList'
-import { about } from '../content/about'
+import { getLeadership } from '../content/about'
 import { profile } from '../content/profile'
-import { getProject } from '../content/projects'
 import { projectPath } from '../lib/paths'
 import { usePageTitle } from '../lib/usePageTitle'
 
 // Content for this page lives in src/content/about.ts (leadership) and
-// src/content/profile.ts (bio and skills).
+// src/content/profile.ts (intro, bio, and skills).
 
 export default function About() {
   usePageTitle('About Me')
-
-  // Look up each leadership entry's project for its organization, role, dates, and link.
-  const leadership = about.leadership.flatMap((entry) => {
-    const project = getProject(entry.projectId)
-    return project ? [{ ...entry, project }] : []
-  })
+  const leadership = getLeadership()
 
   return (
     <div className="container page">
@@ -29,6 +23,7 @@ export default function About() {
           <p className="eyebrow">About</p>
           <h1>About Me</h1>
           <p className="about-page__title">{profile.title}</p>
+          <p>{profile.intro}</p>
           {profile.bio.map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
           ))}

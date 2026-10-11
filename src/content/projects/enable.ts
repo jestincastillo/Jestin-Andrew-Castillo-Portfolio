@@ -12,7 +12,7 @@ const enable = {
   role: 'Test Hands Team Lead | International Hands Member',
   timeline: 'October 2025 - October 2026',
   team: 'Test Hands',
-  tags: ['Assistive Tech', 'CAD', '3D Printing', 'User-Centered Design'],
+  tags: ['Assistive Tech', '3D Printing', 'User-Centered Design'],
   tools: ['SolidWorks', 'Bambu Studio', 'FDM printing'],
   cover: { src: 'enable/cover.jpg', caption: 'Assembled prosthetic hand' },
 
@@ -53,8 +53,8 @@ const enable = {
         "Scaling was based on measurements of the recipient's residual limb, with a scale factor of 10% to match their proportions, as a model the client could grow into is more beneficial than a model which is already too small for the client.",
       ],
       images: [
-        { src: 'enable/phoenix.jpg', caption: 'e-Nable Phoenix Hand Model' },
-        { src: 'enable/kwawu.jpg', caption: 'e-Nable Kwawu Arm Model' },
+        { src: 'enable/phoenix.jpg', caption: 'e-NABLE Phoenix Hand Model' },
+        { src: 'enable/kwawu.jpg', caption: 'e-NABLE Kwawu Arm Model' },
       ],
       centered: true
     },
@@ -66,9 +66,9 @@ const enable = {
       ],
     },
     {*/
-      title: 'CAD',
+      title: '3D Print Slicing',
       paragraphs: [
-        'In Bambu Studio, I scaled the base model to improve fit and proportions for our client. I kept critical features, such as pin holes and tendon channels, at fixed sizes so the hardware still fit after scaling.',
+        'In Bambu Studio, I scaled the adult model down by 10% to improve fit and proportions for our client. I kept critical features, such as pin holes and tendon channels, at fixed sizes so the hardware still fit after scaling.',
       ],
       images: [
         { src: 'enable/slice1.jpg', caption: 'Hand Component in Bambu Studio' },
@@ -87,7 +87,7 @@ const enable = {
     {
       title: 'Printing, Assembly & Fitting',
       paragraphs: [
-        'Parts were printed in PETG with flexible velcro grip pads, then assembled with rubber bands and zip ties. During the fitting session we alternated between different rubber band stiffnesses and adjusted the tightness of the velcro strap so the hand closed reliably and felt comfortable.',
+        'Parts were printed in PETG, which we found was stronger than PLA as we were limited by these two filament types. We also used flexible velcro grip pads and assembled the components with rubber bands and zip ties. We conducted grip testing by allowing the prosthetic to hold a 5 lb dumbbell vertically in a hammer position, which it succeeded in. During the fitting session we alternated between different rubber band stiffnesses and adjusted the tightness of the velcro strap so the hand closed reliably and felt comfortable.',
       ],
       images: [
         { src: 'enable/print1.jpg', caption: 'Final Product, Inner View' },

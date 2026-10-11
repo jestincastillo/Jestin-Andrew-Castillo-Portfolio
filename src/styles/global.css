@@ -342,10 +342,49 @@ code {
   margin-bottom: 1.75rem;
 }
 
-.hero__bio {
-  font-size: 1.1rem;
+/* Leadership roles under your name: your role, then the organization (links to the project). */
+.hero__roles {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
   max-width: 62ch;
-  margin-bottom: 2rem;
+}
+
+.hero__roles li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.hero__roles li + li {
+  margin-top: 12px;
+}
+
+.hero__roles li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.hero__role-title {
+  display: block;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--heading);
+}
+
+.hero__role-org {
+  display: inline-block;
+  margin-left: 16px; /* indented under the role */
+  color: var(--text-muted);
+}
+
+.hero__role-org:hover {
+  color: var(--accent);
 }
 
 .hero__actions {
@@ -863,7 +902,8 @@ code {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  /* Wide enough that the email address fits on one line on desktop. */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
   gap: 16px;
   max-width: 980px;
 }
@@ -909,12 +949,11 @@ code {
   color: var(--text-muted);
 }
 
+/* Long values (like the email address) wrap instead of being cut off, so visitors can read and copy them. */
 .contact-card__value {
   color: var(--heading);
   font-weight: 500;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: break-word;
 }
 
 .contact-location {

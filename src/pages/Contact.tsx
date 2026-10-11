@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import Icon, { type IconName } from '../components/Icon'
 import { useResume } from '../components/ResumeButton'
 import Reveal from '../components/Reveal'
@@ -5,6 +6,20 @@ import { profile } from '../content/profile'
 import { usePageTitle } from '../lib/usePageTitle'
 
 const prettyUrl = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
+
+/**
+ * Lets a long email or link wrap at a sensible spot on narrow screens: before
+ * the "@" or after a "/", instead of in the middle of a word.
+ */
+function withBreakPoints(value: string) {
+  return value.split(/([@/])/).map((part, i) => (
+    <Fragment key={i}>
+      {part === '@' && <wbr />}
+      {part}
+      {part === '/' && <wbr />}
+    </Fragment>
+  ))
+}
 
 interface ContactMethod {
   icon: IconName
@@ -58,7 +73,7 @@ export default function Contact() {
               </span>
               <span className="contact-card__text">
                 <span className="contact-card__label">{m.label}</span>
-                <span className="contact-card__value">{m.value}</span>
+                <span className="contact-card__value">{withBreakPoints(m.value)}</span>
               </span>
               <Icon name={m.download ? 'download' : m.external ? 'external' : 'arrowRight'} size={16} />
             </a>

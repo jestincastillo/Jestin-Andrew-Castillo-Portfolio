@@ -8,10 +8,23 @@
 // These bullets were written from what you described on each project page.
 // ─────────────────────────────────────────────────────────────────────────────
 
+import { getProject } from './projects'
+
 export interface LeadershipEntry {
   /** The `id` of a project in src/content/projects/ (e.g. 'longhorn-baja-racing'). */
   projectId: string
   points: string[]
+}
+
+/**
+ * Leadership entries joined with their project (for organization, role, dates, and link).
+ * Used by the About Me page and the leadership bullets at the top of the home page.
+ */
+export function getLeadership() {
+  return about.leadership.flatMap((entry) => {
+    const project = getProject(entry.projectId)
+    return project ? [{ ...entry, project }] : []
+  })
 }
 
 export const about = {
@@ -28,7 +41,9 @@ export const about = {
       projectId: 'longhorn-baja-racing',
       points: [
         "Driving 7 interdisciplinary subteams to refine and optimize integration, streamlining cross-functional workflows and eliminating pre-existing bottlenecks",
-        "Optimizing driver comfort and safety within an all-terrain racecar for a 4-hour endurance race along a rugged track",
+        "Optimizing an all-terrain race car's ergonomics, which encapsulates driver comfort, safety, and the vehicle's control systems for a 4-hour endurance race along a rugged track",
+        "Leading the design and fabrication of our custom seat, steering wheel, body panels, and brake & throttle pedals",
+        "Ensuring proper fitment between all drivers within the vehicle and ensuring each driver can fully actuate the control systems at full range of motion without any obstructions from within the roll cage",
         "Designing an adjustable brake pedal assembly that gives each of our four drivers their own personalized setting for braking stiffness and pedal range of motion",
         'Saw firsthand how difficult it was for the team to track its bills of materials, which inspired the supply chain tracker I built at Agentic Innovations',
       ],
@@ -36,10 +51,10 @@ export const about = {
     {
       projectId: 'enable-ut-austin',
       points: [
-        'Led the Test Hands team in designing and 3D printing custom-fit prosthetics for clients across the world',
+        'Led the 15-member Test Hands team in designing and 3D printing 15 custom-fit prosthetics for clients across the world',
         "Collaborated with 6 colleagues to design and fabricate a prosthetic for a young client across the globe with a below-the-elbow amputation",
         "Communicated with the North American chapter of e-NABLE to speak with our recipient and their family to set design criteria, from gripping everyday objects to comfortable all-day wear",
-        'Chose the Kwawu arm design and scaled it down by 10% so the client could grow into it',
+        'Chose the Kwawu arm design and scaled the adult model down by 10% so the client could grow into it',
         'Tuned rubber band stiffness and strap tightness until the hand could consistently support objects over 5 lbs, closed reliably, and felt comfortable',
       ],
     },

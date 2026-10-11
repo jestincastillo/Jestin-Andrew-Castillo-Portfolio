@@ -17,10 +17,10 @@ const baja = {
   org: 'Longhorn Baja Racing',
   title: 'Ergonomic Brake Pedal Assembly for a Baja SAE Off-Road Vehicle',
   summary:
-    "Designing, analyzing, and building driver controls systems and safety protocols for UT Austin's single-seat off-road race vehicle, which competes in Baja SAE.",
+    "I am designing an easily adjustable brake pedal assembly, capable of fitting all four of our drivers during the Baja SAE 4-hour endurance race.",
   status: 'In Progress', // label on the project card and Projects dropdown; delete when the project is done
   role: 'Vice-Captain | Ergonomics Lead Engineer | Co-Founder ',
-  timeline: 'May 2025 – Present',
+  timeline: 'March 2025 – Present',
   team: 'Ergonomics',
   tags: ['Vehicle Design', 'CAD', 'FEA', 'Manufacturing'],
   tools: ['SolidWorks', 'SolidWorks Simulation', 'ANSYS', 'Manual Milling'],
@@ -40,8 +40,7 @@ const baja = {
     {
       title: 'Overview',
       paragraphs: [
-        "Longhorn Baja Racing is UT Austin's Baja SAE team. Each year, we design, build, and race a single-seat off-road vehicle against other collegiate teams from around the world on the renowned 4-hour endurance race. Our vehicle is judged in static events (design, cost, and business presentations) and dynamic events (acceleration, hill climb, maneuverability, and suspension and traction).",
-        "Every team runs the same stock engine, so the advantage comes from engineering: a lighter car, a stronger and more reliable chassis, and a drivetrain and suspension that put the power down over rough terrain. My work focused on vehicle ergonomics, which encapsulates driver comfort, safety, and the vehicle's control systems.",
+        "Longhorn Baja Racing is UT Austin's Baja SAE team. Each year, we design, build, and race a single-seat off-road vehicle against other collegiate teams from around the world on the renowned 4-hour endurance race. Our vehicle is judged in static events (design, cost, and business presentations) and dynamic events (acceleration, hill climb, maneuverability, and suspension and traction). Every team runs the same engine, so the advantage is up to the team's design decisions: a lighter car, a stronger and more reliable chassis, a powerful drivetrain and suspension setup, and more.",
       ],
     },
     {
@@ -71,7 +70,7 @@ const baja = {
       
       title: 'Design Sketches',
       paragraphs: [
-        'I started by consulting other competing teams to gain advice for how they tackled the same issue before beginning initial skeches.',
+        'I started by consulting other competing teams to gain advice for how they tackled the same issue before beginning initial sketches.',
         'Hand calculations for mechanical advantages and pedal ratios gave me initial dimensions to match during the initial CAD designs.'
       ],
       images: [
@@ -84,13 +83,13 @@ const baja = {
     
     {
       title: 'CAD',
-      status: 'In Progress',
+      // status: 'In Progress',
       paragraphs: [
-        "I modeled the assembly in SolidWorks, which I conducted continuous FEA analyses and CAD edits on until I landed on a durable, rule-compliant, personalized design. The assembly was checked against the full vehicle model for clearance through the full range of motion.",
+        "I modeled the assembly in SolidWorks, which I conducted continuous FEA analyses and CAD edits on until I landed on a durable, rule-compliant, personalized design. The assembly was checked against the full vehicle model for clearance through the full range of motion, and weighed in at 3.42 lbs, fulfilling each of my goals.",
       ],
       bullets: [
-        "The pedal arm and mounting bracket contain many pin-holes for adjustability, allowing drivers to quickly select their preferred setting upon switching with the previous driver at a pitstop.",
-        "The curved design of the arm allows for more efficient stress distrbution, ensuring the arm is the least likely to fail first.",
+        "The pedal arm and mounting bracket contain many pin holes for adjustability, allowing drivers to quickly select their preferred setting upon switching with the previous driver at a pit stop.",
+        "The curved design of the arm allows for more efficient stress distribution, ensuring the arm is the least likely to fail first.",
         "I decided to use directly mounted brake fluid reservoirs for ease of manufacturability and to avoid our drivers' legs or feet from getting caught when attempting to egress the vehicle.",
       ],
       images: [
@@ -103,13 +102,13 @@ const baja = {
     },
     {
       title: 'FEA',
-      status: 'In Progress',
+      // status: 'In Progress',
       paragraphs: [
         'I ran static structural analyses in ANSYS for driver-applied load cases. Boundary conditions modeled include pin support at the base of the arm and the force exerted by the master cylinders back onto the pedal arm.',
         // 'A mesh convergence study confirmed the results were stable to within [X]%. The final design has a minimum factor of safety of [X] in the worst-case load case, with peak stress concentrated at [location], which I addressed by [adding a fillet / changing wall thickness / adding a gusset].',
       ],
       images: [
-        { src: 'baja/fea-von-mises.jpg', caption: 'Von-Mises Stress, 2000 N Load Case, Applied Near The Top' },
+        { src: 'baja/fea-von-mises.jpg', caption: 'Von Mises Stress, 2000 N Load Case, Applied Near The Top' },
         { src: 'baja/fea-total-deformation.jpg', caption: 'Total Deformation Simulation, 2000 N Load Case, Applied Near The Top' },
       ],
       columns: 1,
@@ -126,9 +125,9 @@ const baja = {
       title: 'Results & Next Steps',
       status: 'In Progress',
       bullets: [
-        'While my design was structurally sound, rule-compliant, and was capable of passing the technical inspection, many experienced teams and machinists advised me and my team  to purchase an off-the-shelf brake pedal for our first competition instead.',
-        'It is difficult for a first-year team to understand all of the impacts placed onto the brake pedal by both the driver and the vehicle due to the rugged terrain. Thus, more experienced teams suggested we analyze the effects of the 4-hour endurance rance onto a proven assembly before we use my designs.',
-        'At the Ohio 2026 competition, I noticed that the vehicle experiences more side-to-side impacts than I expected, and I am to solve this issue by increasing the thickness of the pedal and height of the mounting bracket.',
+        'While my design was structurally sound, rule-compliant, and was capable of passing the technical inspection, many experienced teams and machinists advised me and my team to purchase an off-the-shelf brake pedal for our first competition instead.',
+        'It is difficult for a first-year team to understand all of the impacts placed onto the brake pedal by both the driver and the vehicle due to the rugged terrain. Thus, more experienced teams suggested we analyze the effects of the 4-hour endurance race onto a proven assembly before we use my designs.',
+        'At the Ohio 2026 competition, I noticed that the vehicle experiences more side-to-side impacts than I expected, and I aim to solve this issue by increasing the thickness of the pedal and height of the mounting bracket.',
         'After conducting more testing and analyses with our off-the-shelf brake pedal assembly, I aim to use this knowledge to improve upon my designs so we can bring it to the next competition.',
       ],
     },

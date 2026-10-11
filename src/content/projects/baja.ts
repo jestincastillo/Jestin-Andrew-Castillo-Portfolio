@@ -19,7 +19,7 @@ const baja = {
   summary:
     "Designing, analyzing, and building driver controls systems and safety protocols for UT Austin's single-seat off-road race vehicle, which competes in Baja SAE.",
   status: 'In Progress', // label on the project card and Projects dropdown; delete when the project is done
-  role: 'Lead Engineer',
+  role: 'Vice-Captain | Ergonomics Lead Engineer | Co-Founder ',
   timeline: 'May 2025 – Present',
   team: 'Ergonomics',
   tags: ['Vehicle Design', 'CAD', 'FEA', 'Manufacturing'],
@@ -123,7 +123,7 @@ const baja = {
       images: [{ src: 'baja/manufactured.jpg', caption: 'Finished part installed on the car' }],
     }, */
     {
-      title: 'Results & Lessons Learned',
+      title: 'Results & Next Steps',
       status: 'In Progress',
       bullets: [
         'While my design was structurally sound, rule-compliant, and was capable of passing the technical inspection, many experienced teams and machinists advised me and my team  to purchase an off-the-shelf brake pedal for our first competition instead.',

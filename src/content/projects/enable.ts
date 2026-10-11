@@ -9,7 +9,7 @@ const enable = {
   title: 'Custom 3D-Printed Prosthetic Hand',
   summary:
     'Designing and 3D printing a low-cost, body-powered prosthetic hand tailored to a recipient with an upper-limb difference.',
-  role: 'Team Lead',
+  role: 'Test Hands Team Lead | International Hands Member',
   timeline: 'October 2025 - October 2026',
   team: 'Test Hands',
   tags: ['Assistive Tech', 'CAD', '3D Printing', 'User-Centered Design'],

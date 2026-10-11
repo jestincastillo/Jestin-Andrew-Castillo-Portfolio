@@ -10,7 +10,7 @@ const neurotech = {
   summary:
     'Designing the mechanical linkages, electronic housing components, and thermal dissipation systems for a 6-axis bionic limb capable of gripping objects over five pounds and creating realistic hand gestures, actuated via an EMG-reading Mudra Link armband worn by the prosthetic user, designed to be used on at a desk or other flat surface.',
   status: 'In Progress', // label on the project card and Projects dropdown; delete when the project is done
-  role: 'Mechanical Lead Engineer',
+  role: 'Prosthetic Mechanical Lead Engineer',
   timeline: 'September 2026 – Present',
   team: 'Prosthetic, Mechanical',
   tags: ['Assistive Tech', 'CAD', 'Prototyping'],

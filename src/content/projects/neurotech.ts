@@ -31,8 +31,8 @@ const neurotech = {
     {
       title: 'Overview',
       paragraphs: [
-        'Longhorn Neurotech is a student organization at UT Austin focused on brain-computer interfaces (BCIs) and assistive devices. Technical teams combine hardware, signal processing, and software to build systems that read brain or muscle activity and use it to control devices, showcased to judges at a competition at the end of every semester.',
-        'I lead the mechanical subteam of the prosthetic arm project, focusing my team on mechanical design, failure modes and effects analysis, and heat transfer systems to ensure our 3D printed product can withstand all potential stresses while remaining humanoid in style.',
+        'Longhorn Neurotech is a student organization at UT Austin focused on brain-computer interfaces (BCIs) and assistive devices. Technical teams combine hardware, signal processing, and software to build systems that read brain or muscle activity and use it to control devices. Final products are showcased to judges at a competition at the end of every semester.',
+        'I lead the mechanical subteam of the prosthetic arm project, focusing my team on mechanical design, failure modes and effects analysis, and heat transfer systems to ensure our 3D-printed product can withstand all potential stresses while remaining humanoid in style.',
       ],
     },
     {
@@ -69,7 +69,7 @@ const neurotech = {
       title: 'CAD',
       // status: 'In Progress', // delete this line when the section is finished
       paragraphs: [
-        'We are still in the early stage of design, so the only CAD file I have is my first prototype of our base. Using a simple two-gear setup, a motor placed on the top of the base rotates a gear from inside the casing which rotates another gear to incur a rotation of the entire arm along the z-axis.',
+        'We are still in the early stage of design, so the only CAD file I have is my first prototype of our base. Using a simple two-gear setup, a motor placed on the top of the base rotates a gear from inside the casing which rotates another gear to rotate the entire arm about the z-axis.',
       ],
       images: [
         { src: 'neurotech/cad-base1.jpg', caption: 'Prosthetic Base Assembly, Isometric View' },
@@ -89,7 +89,7 @@ const neurotech = {
       title: 'Prototyping & Testing',
       // status: 'In Progress',
       paragraphs: [
-        'As our first prototype, I focused more on depicting the size of the base to visualize how the rest of the prosthetic should be sized. In future designs and prototypes, I will implement housing for electrical components within the base to increase the weight and stability of the foundation.',
+        'For our first prototype, I focused more on depicting the size of the base to visualize how the rest of the prosthetic should be sized. In future designs and prototypes, I will implement housing for electrical components within the base to increase the weight and stability of the foundation.',
       ],
       images: [
         { src: 'neurotech/baseprototype1.jpg', caption: 'Base Prototype, Arm Rotation About z-axis' },

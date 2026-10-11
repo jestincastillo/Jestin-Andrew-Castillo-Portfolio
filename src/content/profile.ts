@@ -16,7 +16,7 @@ export const profile = {
 
   /** Each string is one paragraph, shown in the home page's About section and on the About Me page. */
   bio: [
-    'Across Longhorn Baja Racing, Longhorn Neurotech, and e-NABLE @ UT Austin, I have worked through the full design loop: defining requirements, sketching concepts, modeling in CAD, checking designs with FEA, and building and testing prototypes.',
+    'Across Longhorn Baja Racing, Longhorn Neurotech, and e-NABLE at UT Austin, I have worked through the full design loop: defining requirements, sketching concepts, modeling in CAD, checking designs with FEA, and building and testing prototypes.',
   ],
 
   email: 'jestin.andrew.castillo@gmail.com',

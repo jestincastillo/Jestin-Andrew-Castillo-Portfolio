@@ -40,13 +40,13 @@ const baja = {
     {
       title: 'Overview',
       paragraphs: [
-        "Longhorn Baja Racing is UT Austin's Baja SAE team. Each year, we design, build, and race a single-seat off-road vehicle against other collegiate teams from around the world on the renowned 4-hour endurance race. Our vehicle is judged in static events (design, cost, and business presentations) and dynamic events (acceleration, hill climb, maneuverability, and suspension and traction). Every team runs the same engine, so the advantage is up to the team's design decisions: a lighter car, a stronger and more reliable chassis, a powerful drivetrain and suspension setup, and more.",
+        "Longhorn Baja Racing is UT Austin's Baja SAE team. Each year, we design, build, and race a single-seat off-road vehicle against other collegiate teams from around the world in the renowned 4-hour endurance race. Our vehicle is judged in static events (design, cost, and business presentations) and dynamic events (acceleration, hill climb, maneuverability, and suspension and traction). Every team runs the same engine, so the advantage is up to the team's design decisions: a lighter car, a stronger and more reliable chassis, a powerful drivetrain and suspension setup, and more.",
       ],
     },
     {
       title: 'Problem & Requirements',
       paragraphs: [
-        'Ensuring each of our four drivers could reliably actuate the brake pedal would be difficult if our brake pedal was set to one determined angle and stiffness. I set out to design an adjustable brake pedal assembly, easy to set within the pressure of an ongoing race, and gives each driver their own personalized setting for braking stiffness and angular range of motion.',
+        'Ensuring each of our four drivers could reliably actuate the brake pedal would be difficult if our brake pedal was set to one determined angle and stiffness. I set out to design an adjustable brake pedal assembly that is easy to adjust under race pressure and gives each driver their own personalized setting for braking stiffness and angular range of motion.',
       ],
       bullets: [
         'Withstand 450 lbf / 2000 N loads from any given driver',
@@ -85,12 +85,12 @@ const baja = {
       title: 'CAD',
       // status: 'In Progress',
       paragraphs: [
-        "I modeled the assembly in SolidWorks, which I conducted continuous FEA analyses and CAD edits on until I landed on a durable, rule-compliant, personalized design. The assembly was checked against the full vehicle model for clearance through the full range of motion, and weighed in at 3.42 lbs, fulfilling each of my goals.",
+        "I modeled the assembly in SolidWorks and iterated between FEA and CAD changes until I landed on a durable, rule-compliant, personalized design. The assembly was checked against the full vehicle model for clearance through the full range of motion, and weighed in at 3.42 lbs, fulfilling each of my goals.",
       ],
       bullets: [
         "The pedal arm and mounting bracket contain many pin holes for adjustability, allowing drivers to quickly select their preferred setting upon switching with the previous driver at a pit stop.",
-        "The curved design of the arm allows for more efficient stress distribution, ensuring the arm is the least likely to fail first.",
-        "I decided to use directly mounted brake fluid reservoirs for ease of manufacturability and to avoid our drivers' legs or feet from getting caught when attempting to egress the vehicle.",
+        "The curved design of the arm allows for more efficient stress distribution, ensuring the arm is the least likely part to fail.",
+        "I decided to use directly mounted brake fluid reservoirs for ease of manufacturability and to keep our drivers' legs or feet from getting caught when attempting to egress the vehicle.",
       ],
       images: [
         { src: 'baja/cad-iso.jpg', caption: 'Final CAD model, Isometric View' },
@@ -125,10 +125,10 @@ const baja = {
       title: 'Results & Next Steps',
       status: 'In Progress',
       bullets: [
-        'While my design was structurally sound, rule-compliant, and was capable of passing the technical inspection, many experienced teams and machinists advised me and my team to purchase an off-the-shelf brake pedal for our first competition instead.',
-        'It is difficult for a first-year team to understand all of the impacts placed onto the brake pedal by both the driver and the vehicle due to the rugged terrain. Thus, more experienced teams suggested we analyze the effects of the 4-hour endurance race onto a proven assembly before we use my designs.',
-        'At the Ohio 2026 competition, I noticed that the vehicle experiences more side-to-side impacts than I expected, and I aim to solve this issue by increasing the thickness of the pedal and height of the mounting bracket.',
-        'After conducting more testing and analyses with our off-the-shelf brake pedal assembly, I aim to use this knowledge to improve upon my designs so we can bring it to the next competition.',
+        'While my design was structurally sound, rule-compliant, and capable of passing the technical inspection, many experienced teams and machinists advised me and my team to purchase an off-the-shelf brake pedal for our first competition instead.',
+        'It is difficult for a first-year team to understand all of the impacts placed onto the brake pedal by both the driver and the vehicle due to the rugged terrain. Thus, more experienced teams suggested we analyze the effects of the 4-hour endurance race on a proven assembly before we use my designs.',
+        'At the Ohio 2026 competition, I noticed that the vehicle experienced more side-to-side impacts than I expected, and I aim to solve this issue by increasing the thickness of the pedal and height of the mounting bracket.',
+        'After conducting more testing and analyses with our off-the-shelf brake pedal assembly, I aim to use this knowledge to improve upon my designs so we can bring them to the next competition.',
       ],
     },
   ],

@@ -42,11 +42,12 @@ export default function Contact() {
       ? [{ icon: 'phone' as const, label: 'Phone', value: profile.phone, href: `tel:+${profile.phone.replace(/\D/g, '')}` }]
       : []),
     { icon: 'linkedin', label: 'LinkedIn', value: prettyUrl(profile.linkedin), href: profile.linkedin, external: true },
+    // The resume card only appears once public/resume.pdf exists.
+    ...(resume.available
+      ? [{ icon: 'file' as const, label: 'Resume', value: 'Download PDF', href: resume.url, download: resume.fileName }]
+      : []),
     { icon: 'github', label: 'GitHub', value: prettyUrl(profile.github), href: profile.github, external: true },
   ]
-  if (resume.available) {
-    methods.push({ icon: 'file', label: 'Resume', value: 'Download PDF', href: resume.url, download: resume.fileName })
-  }
 
   return (
     <div className="container page">

@@ -40,7 +40,7 @@ const enable = {
       title: 'Recipient Needs & Requirements',
       paragraphs: ['We started by contacting the recipient and their family to understand what the client wanted to be able to do:'],
       bullets: [
-        'Grip everyday objects such as a water bottle, cup, or kitchen utensils.',
+        'Grip everyday objects such as a water bottle, cup, or kitchen utensils',
         'Lightweight and comfortable enough to wear for 6 hours',
         'Sized from hand and forearm measurements, with room to adjust as they grow',
         'Personalized styling: colored filament requests from the recipient',
@@ -87,7 +87,7 @@ const enable = {
     {
       title: 'Printing, Assembly & Fitting',
       paragraphs: [
-        'Parts were printed in PETG, which we found was stronger than PLA as we were limited by these two filament types. We also used flexible velcro grip pads and assembled the components with rubber bands and zip ties. We conducted grip testing by allowing the prosthetic to hold a 5 lb dumbbell vertically in a hammer position, which it succeeded in. During the fitting session we alternated between different rubber band stiffnesses and adjusted the tightness of the velcro strap so the hand closed reliably and felt comfortable.',
+        'We were limited to PLA and PETG for our 3D-printing filaments, and we chose PETG since it is stronger than PLA. We also used flexible velcro grip pads and assembled the components with rubber bands and zip ties. We conducted grip testing by allowing the prosthetic to hold a 5 lb dumbbell vertically in a hammer position, which it held successfully. During the fitting session we alternated between different rubber band stiffnesses and adjusted the tightness of the velcro strap so the hand closed reliably and felt comfortable.',
       ],
       images: [
         { src: 'enable/print1.jpg', caption: 'Final Product, Inner View' },

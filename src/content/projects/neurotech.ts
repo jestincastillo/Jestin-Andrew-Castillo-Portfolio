@@ -62,7 +62,7 @@ const neurotech = {
         { src: 'neurotech/sketch-2.jpg', caption: 'Gripping Actuation Concepts' },
         { src: 'neurotech/sketch-3.jpg', caption: 'Alternate Finger Actuation Idea' },
         { src: 'neurotech/sketch-4.jpg', caption: 'Opposable Thumb Mechanism Concept' },
-        { src: 'neurotech/sketch-5.jpg', caption: 'Modular Palm Grip Pads, "Clip-On" for Ease of Hand Access and Manufacturability' },
+        { src: 'neurotech/sketch-5.jpg', caption: 'Modular Palm Grip Pads, Split Into 3 Segments For Natural Gripping, "Clip-On" for Ease of Hand Access and Manufacturability' },
       ],
       columns: 1,
       centered: true

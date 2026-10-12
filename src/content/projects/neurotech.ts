@@ -15,7 +15,7 @@ const neurotech = {
   team: 'Prosthetic, Mechanical',
   tags: ['Assistive Tech', 'CAD', 'Prototyping', '3D Printing', 'User-Centered Design'],
   tools: ['SolidWorks', 'SolidWorks Simulation', '3D printing'],
-  cover: { src: 'neurotech/cover.jpg' /* , caption: 'Prototype headset' */ },
+  cover: { src: 'neurotech/cover.jpg' },
 
   /*
   highlights: [
@@ -51,7 +51,7 @@ const neurotech = {
       paragraphs: [
         'I looked at existing open-source upper-limb prosthetics such as the Ruka V2 robotic hand, then sketched concepts for actuation mechanisms based on the limited materials we have access to as a student organization.',
       ],
-      images: [{ src: 'neurotech/concepts.jpg', caption: 'Early Concept Sketch' }],
+      images: [{ src: 'neurotech/cover.jpg', caption: 'Early Concept Sketch' }],
       centered: true
     },
     {
@@ -60,7 +60,9 @@ const neurotech = {
       images: [
         { src: 'neurotech/sketch-1.jpg', caption: 'Preliminary Finger Model Sketches' },
         { src: 'neurotech/sketch-2.jpg', caption: 'Gripping Actuation Concepts' },
-        { src: 'neurotech/sketch-3.jpg', caption: 'Opposable Thumb Linkage Concept' },
+        { src: 'neurotech/sketch-3.jpg', caption: 'Alternate Finger Actuation Idea' },
+        { src: 'neurotech/sketch-4.jpg', caption: 'Opposable Thumb Mechanism Concept' },
+        { src: 'neurotech/sketch-5.jpg', caption: 'Modular Palm Grip Pads, "Clip-On" for Ease of Hand Access and Manufacturability' },
       ],
       columns: 1,
       centered: true

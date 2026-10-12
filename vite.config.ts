@@ -1,6 +1,6 @@
 import { copyFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { defineConfig, type Plugin } from 'vite'
+import { defineConfig, normalizePath, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // GitHub Pages serves this site from a sub-path like https://<user>.github.io/<repo>/.
@@ -26,9 +26,31 @@ function spaFallback(): Plugin {
   }
 }
 
+// Vite only live-updates code and styles. Files in public/ (your images, resume,
+// etc.) are served as-is, so replacing one used to need a manual browser refresh.
+// This reloads the page automatically whenever a file in public/ is added,
+// replaced, or deleted while `npm run dev` is running.
+function reloadOnPublicChange(): Plugin {
+  return {
+    name: 'reload-on-public-change',
+    apply: 'serve',
+    configureServer(server) {
+      const publicDir = normalizePath(server.config.publicDir)
+      const reload = (file: string) => {
+        if (normalizePath(file).startsWith(`${publicDir}/`)) {
+          server.ws.send({ type: 'full-reload' })
+        }
+      }
+      server.watcher.on('add', reload)
+      server.watcher.on('change', reload)
+      server.watcher.on('unlink', reload)
+    },
+  }
+}
+
 export default defineConfig({
   base,
-  plugins: [react(), spaFallback()],
+  plugins: [react(), spaFallback(), reloadOnPublicChange()],
   server: {
     // This project lives in OneDrive, which can hide file saves from the normal
     // file watcher. Polling checks for changes every 300 ms so Ctrl+S always

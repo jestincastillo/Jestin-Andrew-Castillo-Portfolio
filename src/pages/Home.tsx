@@ -57,7 +57,7 @@ export default function Home() {
         <section className="section">
           <div className="container">
             <Reveal className="section__head">
-              <h2>Industry experience</h2>
+              <h2>Industry Experience</h2>
               <Link to="/experience" className="text-link">
                 All industry experience <Icon name="arrowRight" size={16} />
               </Link>
@@ -77,7 +77,7 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <Reveal className="section__head">
-            <h2>Selected projects</h2>
+            <h2>Engineering Projects</h2>
             <Link to="/projects" className="text-link">
               All projects <Icon name="arrowRight" size={16} />
             </Link>

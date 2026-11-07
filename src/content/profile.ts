@@ -5,7 +5,10 @@
 
 export const profile = {
   name: 'Jestin Andrew Castillo',
-  /** Shown under your name on the home page. */
+  /** One-liner shown directly under your name on the home page. */
+  headline:
+    'Bridging human biomechanics and mechanical design through functional prototyping, FEA, and precision mechanisms',
+  /** Shown under the headline on the home page. */
   title: 'B.S. Mechanical Engineering | The University of Texas at Austin, Dec 2027',
   /** One line used in the browser tab and footer. */
   tagline: 'Design, analysis, and hands-on builds.',
@@ -46,7 +49,7 @@ export const profile = {
     { group: 'CAD & Design', items: ['SolidWorks', 'Fusion 360', 'Onshape', 'GD&T', 'Engineering Drawings'] },
     { group: 'Analysis', items: ['FEA (SolidWorks Simulation)', 'Hand Calculations', 'Python', 'MATLAB'] },
     { group: 'Fabrication', items: ['3D printing (FDM)', 'Machining', 'Prototyping'] },
-    { group: 'Certifications', items: ['EKG Technician', 'Clinical Medical Assistant', 'Python Programming']},
+    { group: 'Certifications', items: ['Python Programming', 'EKG Technician', 'Clinical Medical Assistant']},
     { group: 'Other', items: ['Technical writing', 'Design Reviews', 'Team Leadership', 'Team Collaboration'] },
   ],
 }

@@ -30,6 +30,8 @@ export interface ProjectSection {
   centered?: boolean
   /** Optional label next to the heading, e.g. 'In Progress'. */
   status?: string
+  /** Optional smaller sub-headings shown inside this section, after its own text and images. */
+  subsections?: ProjectSection[]
 }
 
 export interface ProjectLink {

@@ -6,16 +6,16 @@ import type { Project } from '../../types'
 const neurotech = {
   id: 'longhorn-neurotech',
   org: 'Longhorn Neurotech',
-  title: '6-Axis Robotic Arm Prosthetic',
+  title: '6-Axis Robotic Prosthetic Arm',
   summary:
-    'Designing the mechanical linkages, electronic housing components, and thermal dissipation systems for a desk-mounted 6-axis bionic limb. The prosthetic arm is actuated via an EMG-reading Mudra Link armband, worn by the user rather than a physically worn prosthetic.',
+    'Designing the mechanical linkages, electronic housing components, and thermal dissipation systems for a wearable 6-axis bionic limb. The prosthetic arm is actuated via an EMG-reading Mudra Link armband, capable of individual finger movement for hand gestures. Modularly designed to be removed from its base and worn as a functional prosthetic, if the user desires.',
   status: 'In Progress', // label on the project card and Projects dropdown; delete when the project is done
   role: 'Prosthetic Mechanical Lead Engineer',
   timeline: 'September 2026 – Present',
   team: 'Prosthetic, Mechanical',
   tags: ['Assistive Tech', 'CAD', 'Prototyping', '3D Printing', 'User-Centered Design'],
   tools: ['SolidWorks', 'SolidWorks Simulation', '3D printing'],
-  cover: { src: 'neurotech/cover.jpg' },
+  cover: { src: 'neurotech/cad-arm8.png' },
 
   /*
   highlights: [
@@ -71,13 +71,44 @@ const neurotech = {
       title: 'CAD',
       // status: 'In Progress', // delete this line when the section is finished
       paragraphs: [
-        'We are still in the early stage of design, so the only CAD file I have is my first prototype of our base. Using a simple two-gear setup, a motor placed on the top of the base rotates a gear from inside the casing which rotates another gear to rotate the entire arm about the z-axis.',
+        'Designed, conducted FEA analyses (WIP), and produced GD&T engineering drawings (TBD) in SolidWorks.',
       ],
-      images: [
-        { src: 'neurotech/cad-base1.jpg', caption: 'Prosthetic Base Assembly, Isometric View' },
-        { src: 'neurotech/cad-base2.png', caption: 'Prosthetic Base Gear System' },
+      images: [{ src: 'neurotech/cad-arm8.png', caption: '6-Axis Robotic Prosthetic Arm' }],
+      centered: true,
+      subsections: [
+        {
+          title: 'Fingers',
+          images: [
+            { src: 'neurotech/cad-finger3.png', caption: 'Proximal Finger Segment' },
+            { src: 'neurotech/cad-finger4.png', caption: 'Middle Finger Segment' },
+          ],
+          centered: true,
+        },
+        {
+          title: 'Palm/Wrist',
+          images: [{ src: 'neurotech/cad-palmwrist7.png', caption: 'Hand-Fingers Assembly (In Progress)' }],
+          centered: true,
+        },
+        {
+          title: 'Forearm',
+          images: [
+            { src: 'neurotech/cad-arm6.png', caption: 'Detachable Forearm for Physical Use' },
+            { src: 'neurotech/cad-arm5.png', caption: 'Forearm Side View' },
+          ],
+          centered: true,
+        },
+        {
+          title: 'Base',
+          paragraphs: [
+            'Using a simple two-gear setup, a motor placed on the top of the base rotates a gear from inside the casing which rotates another gear to rotate the entire arm about the z-axis.',
+          ],
+          images: [
+            { src: 'neurotech/cad-base1.jpg', caption: 'Prosthetic Base Assembly, Isometric View' },
+            { src: 'neurotech/cad-base2.png', caption: 'Prosthetic Base Gear System' },
+          ],
+          centered: true,
+        },
       ],
-      centered: true
     },
     /* {
       title: 'FEA',

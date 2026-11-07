@@ -24,6 +24,7 @@ export default function Home() {
             <Reveal>
               <p className="eyebrow">Engineering Portfolio</p>
               <h1 className="hero__name">{profile.name}</h1>
+              <p className="hero__headline">{profile.headline}</p>
               <p className="hero__title">{profile.title}</p>
             </Reveal>
             {/* Leadership roles (same entries as the About Me page, from src/content/about.ts). */}

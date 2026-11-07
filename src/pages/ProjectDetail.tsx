@@ -162,17 +162,18 @@ function ProjectPage({ project }: { project: Project }) {
   )
 }
 
-function Section({ id, section }: { id: string; section: ProjectSection }) {
+function Section({ id, section, sub = false }: { id?: string; section: ProjectSection; sub?: boolean }) {
   // Skip blank paragraphs like '' so they don't leave an empty gap.
   const paragraphs = section.paragraphs?.filter((p) => p.trim() !== '') ?? []
+  const Heading = sub ? 'h3' : 'h2'
 
   return (
-    <section id={id} className="project__section">
+    <section id={id} className={sub ? 'project__subsection' : 'project__section'}>
       <Reveal>
-        <h2 className="project__section-title">
+        <Heading className="project__section-title">
           {section.title}
           {section.status && <span className="status-badge">{section.status}</span>}
-        </h2>
+        </Heading>
         {paragraphs.map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
         ))}
@@ -189,6 +190,9 @@ function Section({ id, section }: { id: string; section: ProjectSection }) {
           <Gallery images={section.images} columns={section.columns} centered={section.centered} />
         </Reveal>
       )}
+      {section.subsections?.map((subsection, i) => (
+        <Section key={i} section={subsection} sub />
+      ))}
     </section>
   )
 }

@@ -19,7 +19,7 @@ const baja = {
   summary:
     "I am designing an easily adjustable brake pedal assembly, capable of fitting all four of our drivers during the Baja SAE 4-hour endurance race.",
   status: 'In Progress', // label on the project card and Projects dropdown; delete when the project is done
-  role: 'Vice-Captain | Ergonomics Lead Engineer | Co-Founder ',
+  role: 'Vice-Captain | Co-Founder | Ergonomics Lead Engineer',
   timeline: 'March 2025 – Present',
   team: 'Ergonomics',
   tags: ['Vehicle Design', 'CAD', 'FEA', 'Manufacturing'],

@@ -73,7 +73,7 @@ const neurotech = {
       paragraphs: [
         'Designed, conducted FEA analyses (WIP), and produced GD&T engineering drawings (TBD) in SolidWorks.',
       ],
-      images: [{ src: 'neurotech/cad-arm8.png', caption: '6-Axis Robotic Prosthetic Arm' }],
+      images: [{ src: 'neurotech/cad-arm8.png', caption: 'Basic Forearm to Fingers Model' }],
       centered: true,
       subsections: [
         {

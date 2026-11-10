@@ -150,11 +150,15 @@ const neurotech = {
         },
       ],
     },
-    /* { 
-      title: 'Next Steps',
-      status: 'In Progress',
-      bullets: ['[Next iteration goal]', '[Integration with the signal-processing pipeline]', '[What you learned]'],
-    }, */
+    {
+      title: 'Results & Next Steps',
+      bullets: [
+        'By the end of the Fall 2026 semester, we aim to develop a working prototype capable of actuating each finger individually for hand gesture replication.',
+        'Due to our time constraints and component limitations, we could not implement a mock shoulder and two additional arms behind the forearm for added range of motion.',
+        'We found that the armband we currently use is incapable of reading muscle movement behind the wrist, so we aim to implement an additional armband to read these signals and properly replicate them onto our prosthetic.',
+        "Next semester, we aim to include both armbands into our design, such that we have a complete 6-axis robotic limb, capable of replicating hand gestures, gripping objects up to 5 lbs, operating at a wide range of motion when desktop-mounted, and attachable to a below-the-elbow amputee's arm as a fully functional prosthetic limb.",
+      ],
+    },
   ],
 } satisfies Project
 

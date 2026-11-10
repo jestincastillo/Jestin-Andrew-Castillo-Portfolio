@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } f
 import { imageUrl } from '../lib/paths'
 import type { ProjectImage } from '../types'
 import Icon from './Icon'
+import ImageFrame from './ImageFrame'
 
 const MIN = 1
 const MAX = 5
@@ -20,6 +21,7 @@ interface View {
 export default function ZoomableImage({ image }: { image: ProjectImage }) {
   const boxRef = useRef<HTMLDivElement>(null)
   const [view, setView] = useState<View>({ scale: 1, x: 0, y: 0 })
+  const [failed, setFailed] = useState(false)
   const viewRef = useRef(view)
   viewRef.current = view
 
@@ -65,7 +67,7 @@ export default function ZoomableImage({ image }: { image: ProjectImage }) {
     const onWheel = (e: WheelEvent) => {
       e.preventDefault()
       const p = localPoint(e.clientX, e.clientY)
-      zoomAt(viewRef.current.scale * Math.exp(-e.deltaY * 0.0015), p.x, p.y)
+      zoomAt(viewRef.current.scale * Math.exp(-e.deltaY * 0.00075), p.x, p.y)
     }
     box.addEventListener('wheel', onWheel, { passive: false })
     return () => box.removeEventListener('wheel', onWheel)
@@ -116,6 +118,9 @@ export default function ZoomableImage({ image }: { image: ProjectImage }) {
 
   const zoomed = view.scale > 1
 
+  // Image not added yet: show the usual placeholder instead of a zoom viewer.
+  if (failed) return <ImageFrame image={image} fit="natural" className="lightbox__frame" />
+
   return (
     <div className="zoom">
       <div
@@ -130,6 +135,7 @@ export default function ZoomableImage({ image }: { image: ProjectImage }) {
           src={imageUrl(image.src)}
           alt={image.alt ?? image.caption ?? ''}
           draggable={false}
+          onError={() => setFailed(true)}
           style={{ transform: `translate(${view.x}px, ${view.y}px) scale(${view.scale})` }}
         />
       </div>

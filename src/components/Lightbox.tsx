@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import type { ProjectImage } from '../types'
 import Icon from './Icon'
-import ImageFrame from './ImageFrame'
 import ZoomableImage from './ZoomableImage'
 
 interface LightboxProps {
@@ -70,11 +69,7 @@ export default function Lightbox({ images, index, onClose, onChange }: LightboxP
       )}
 
       <figure className="lightbox__figure" onClick={(e) => e.stopPropagation()}>
-        {image.zoomable ? (
-          <ZoomableImage key={image.src} image={image} />
-        ) : (
-          <ImageFrame key={image.src} image={image} fit="natural" className="lightbox__frame" eager />
-        )}
+        <ZoomableImage key={image.src} image={image} />
         {(image.caption || many) && (
           <figcaption>
             {image.caption}

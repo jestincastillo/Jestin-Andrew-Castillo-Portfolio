@@ -15,7 +15,7 @@ const neurotech = {
   team: 'Prosthetic, Mechanical',
   tags: ['Assistive Tech', 'CAD', 'Prototyping', '3D Printing', 'User-Centered Design'],
   tools: ['SolidWorks', 'SolidWorks Simulation', '3D printing'],
-  cover: { src: 'neurotech/cad-arm8.png', caption: 'Basic Forearm to Fingers Model', zoomable: true },
+  cover: { src: 'neurotech/cad-arm8.png', caption: 'Basic Forearm to Fingers Model' },
 
   /*
   highlights: [
@@ -73,7 +73,7 @@ const neurotech = {
       paragraphs: [
         'Designed, conducted FEA analyses (WIP), and produced GD&T engineering drawings (TBD) in SolidWorks.',
       ],
-      images: [{ src: 'neurotech/cad-arm8.png', caption: 'Basic Forearm to Fingers Model', zoomable: true }],
+      images: [{ src: 'neurotech/cad-arm8.png', caption: 'Basic Forearm to Fingers Model' }],
       centered: true,
       subsections: [
         {

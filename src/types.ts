@@ -12,10 +12,7 @@ export interface ProjectImage {
   /** Shown under the image. */
   caption?: string
   /** Screen-reader description. Falls back to the caption. */
-  alt?: string
-  /** true = in the full-screen viewer, the image can be zoomed and panned (good for detailed CAD). */
-  zoomable?: boolean
-}
+  alt?: string}
 
 export interface ProjectSection {
   /** Section heading. Also appears in the "On this page" sidebar. */

@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom'
 import type { ProjectImage } from '../types'
 import Icon from './Icon'
 import ImageFrame from './ImageFrame'
+import ZoomableImage from './ZoomableImage'
 
 interface LightboxProps {
   images: ProjectImage[]
@@ -69,7 +70,11 @@ export default function Lightbox({ images, index, onClose, onChange }: LightboxP
       )}
 
       <figure className="lightbox__figure" onClick={(e) => e.stopPropagation()}>
-        <ImageFrame key={image.src} image={image} fit="natural" className="lightbox__frame" eager />
+        {image.zoomable ? (
+          <ZoomableImage key={image.src} image={image} />
+        ) : (
+          <ImageFrame key={image.src} image={image} fit="natural" className="lightbox__frame" eager />
+        )}
         {(image.caption || many) && (
           <figcaption>
             {image.caption}

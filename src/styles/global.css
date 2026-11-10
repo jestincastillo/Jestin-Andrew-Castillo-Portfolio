@@ -1040,3 +1040,80 @@ code {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Zoomable lightbox image ─────────────────────────────────────────────── */
+
+.zoom__box {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  touch-action: none;
+  cursor: zoom-in;
+  user-select: none;
+}
+
+.zoom__box--zoomed {
+  cursor: grab;
+}
+
+.zoom__box--zoomed:active {
+  cursor: grabbing;
+}
+
+.zoom__box img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 200px);
+  transform-origin: 0 0;
+  transition: transform 0.08s ease-out;
+}
+
+.zoom__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+  color: #d3d7dc;
+  font-size: 0.85rem;
+}
+
+.zoom__controls button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e3e6ea;
+  cursor: pointer;
+}
+
+.zoom__controls button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.zoom__controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.zoom__level {
+  min-width: 3.5em;
+  text-align: center;
+  font-family: var(--font-mono);
+}
+
+.zoom__hint {
+  color: #9aa1aa;
+  margin-left: 8px;
+}
+
+@media (max-width: 640px) {
+  .zoom__hint {
+    display: none;
+  }
+}

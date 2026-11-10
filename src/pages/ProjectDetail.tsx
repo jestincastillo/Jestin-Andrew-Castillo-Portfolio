@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import { Link, useParams } from 'react-router-dom'
 import Gallery from '../components/Gallery'
 import Icon from '../components/Icon'
 import ImageFrame from '../components/ImageFrame'
+import Lightbox from '../components/Lightbox'
 import Reveal from '../components/Reveal'
 import { designProjects, getProject, industryExperience } from '../content/projects'
 import { projectPath, slugify } from '../lib/paths'
@@ -28,6 +30,7 @@ export default function ProjectDetail() {
 function ProjectPage({ project }: { project: Project }) {
   const sectionIds = useMemo(() => uniqueIds(project.sections.map((s) => s.title)), [project])
   const activeId = useActiveSection(sectionIds)
+  const [coverOpen, setCoverOpen] = useState(false)
 
   // Previous/next only step through the same group (projects, or industry experience).
   const isIndustry = project.category === 'industry'
@@ -97,9 +100,15 @@ function ProjectPage({ project }: { project: Project }) {
 
       {project.cover && (
         <Reveal className="project__cover">
-          <ImageFrame image={project.cover} fit="contain" eager />
+          <ImageFrame image={project.cover} fit="contain" eager onOpen={() => setCoverOpen(true)} />
         </Reveal>
       )}
+
+      <AnimatePresence>
+        {coverOpen && project.cover && (
+          <Lightbox images={[project.cover]} index={0} onClose={() => setCoverOpen(false)} onChange={() => {}} />
+        )}
+      </AnimatePresence>
 
       <div className="project__layout">
         <aside className="project__toc" aria-label="On this page">

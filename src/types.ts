@@ -13,6 +13,8 @@ export interface ProjectImage {
   caption?: string
   /** Screen-reader description. Falls back to the caption. */
   alt?: string
+  /** true = in the full-screen viewer, the image can be zoomed and panned (good for detailed CAD). */
+  zoomable?: boolean
 }
 
 export interface ProjectSection {

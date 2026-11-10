@@ -15,7 +15,7 @@ const neurotech = {
   team: 'Prosthetic, Mechanical',
   tags: ['Assistive Tech', 'CAD', 'Prototyping', '3D Printing', 'User-Centered Design'],
   tools: ['SolidWorks', 'SolidWorks Simulation', '3D printing'],
-  cover: { src: 'neurotech/cad-arm8.png' },
+  cover: { src: 'neurotech/cad-arm8.png', caption: 'Basic Forearm to Fingers Model', zoomable: true },
 
   /*
   highlights: [
@@ -73,7 +73,7 @@ const neurotech = {
       paragraphs: [
         'Designed, conducted FEA analyses (WIP), and produced GD&T engineering drawings (TBD) in SolidWorks.',
       ],
-      images: [{ src: 'neurotech/cad-arm8.png', caption: 'Basic Forearm to Fingers Model' }],
+      images: [{ src: 'neurotech/cad-arm8.png', caption: 'Basic Forearm to Fingers Model', zoomable: true }],
       centered: true,
       subsections: [
         {
@@ -81,12 +81,16 @@ const neurotech = {
           images: [
             { src: 'neurotech/cad-finger3.png', caption: 'Proximal Finger Segment' },
             { src: 'neurotech/cad-finger4.png', caption: 'Middle Finger Segment' },
+            { src: 'neurotech/cad-finger7.png', caption: 'Distal Finger Segment (Fingertip)' },
+            { src: 'neurotech/cad-finger6.png', caption: 'Complete Finger Flexion, Side View' },
+            { src: 'neurotech/cad-finger5-front.png', caption: 'Four-Finger Assembly Mounted to Palm Frame, Front View' },
+            { src: 'neurotech/cad-finger5-back.png', caption: 'Four-Finger Assembly Mounted to Palm Frame, Back View' },
           ],
           centered: true,
         },
         {
           title: 'Palm/Wrist',
-          images: [{ src: 'neurotech/cad-palmwrist7.png', caption: 'Hand-Fingers Assembly (In Progress)' }],
+          images: [{ src: 'neurotech/cad-palmwrist7.png', caption: 'Forearm-Wrist-Palm Assembly (In Progress)' }],
           centered: true,
         },
         {
@@ -121,14 +125,30 @@ const neurotech = {
     {
       title: 'Prototyping & Testing',
       // status: 'In Progress',
-      paragraphs: [
-        'For our first prototype, I focused more on depicting the size of the base to visualize how the rest of the prosthetic should be sized. In future designs and prototypes, I will implement housing for electrical components within the base to increase the weight and stability of the foundation.',
+      subsections: [
+        {
+          title: 'Base',
+          paragraphs: [
+            'For our first prototype, I focused more on depicting the size of the base to visualize how the rest of the prosthetic should be sized. In future designs and prototypes, I will implement housing for electrical components within the base to increase the weight and stability of the foundation.',
+          ],
+          images: [
+            { src: 'neurotech/baseprototype1.jpg', caption: 'Base Prototype, Arm Rotation About z-axis' },
+            { src: 'neurotech/baseprototype2.jpg', caption: 'Base Prototype, Top Casing Removed' },
+          ],
+          centered: true,
+        },
+        {
+          title: 'Fingers',
+          paragraphs: [
+            'After printing our first finger assembly prototype with a 0.004" tolerance and passing a string through its dedicated channel, we found that the fingers were fully capable of complete flexion. I then discovered that the joints actuated in the order of middle, proximal, then distal. To support the future goal of implementing grasping capabilities, I altered the tolerances along each joint such that the order would instead be proximal, middle, then distal. This is to allow the prosthetic to grip objects universally, as curling the distal segment first would appear non-humanlike when attempting to grasp smaller objects.',
+          ],
+          images: [
+            { src: 'neurotech/test-finger-uncurled.jpg', caption: 'Printed Tendon-Driven Finger on Palm Frame, Extended' },
+            { src: 'neurotech/test-finger-curled.jpg', caption: 'Printed Finger Curled by Pulling the Tendon String' },
+          ],
+          centered: true,
+        },
       ],
-      images: [
-        { src: 'neurotech/baseprototype1.jpg', caption: 'Base Prototype, Arm Rotation About z-axis' },
-        { src: 'neurotech/baseprototype2.jpg', caption: 'Base Prototype, Top Casing Removed' },
-      ], 
-      centered: true
     },
     /* { 
       title: 'Next Steps',

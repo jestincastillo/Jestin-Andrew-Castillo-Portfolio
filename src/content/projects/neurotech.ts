@@ -32,7 +32,7 @@ const neurotech = {
       title: 'Overview',
       paragraphs: [
         'Longhorn Neurotech is a student organization at UT Austin focused on brain-computer interfaces (BCIs) and assistive devices. Technical teams combine hardware, signal processing, and software to build systems that read brain or muscle activity and use it to control devices. Final products are showcased to judges at a competition at the end of every semester.',
-        'I lead the mechanical subteam of the prosthetic arm project, focusing my team on mechanical design, failure modes and effects analysis, and heat transfer systems to ensure our 3D-printed product can withstand all potential stresses while remaining humanoid in style.',
+        'I lead the mechanical subteam of the prosthetic arm project, focusing my team on mechanical design, failure modes and effects analysis, and heat transfer systems to ensure our 3D-printed product can withstand all potential stresses while remaining humanoid in style. I personally worked on the integration and assembly of each of my member\'s parts, ensuring proper tolerances and editing each component to avoid any interferences while verifying proper actuation of each linkage.',
       ],
     },
     {

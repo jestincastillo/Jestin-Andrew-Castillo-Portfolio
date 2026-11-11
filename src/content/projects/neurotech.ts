@@ -150,7 +150,7 @@ const neurotech = {
             { src: 'neurotech/test-finger-curled.jpg', caption: 'Printed Finger Curled by Pulling the Tendon String' },
             { src: 'neurotech/test-finger-2-uncurled.jpg', caption: 'Version 2 Finger (White) Beside Version 1 (Blue) on Palm Frame, Extended' },
             { src: 'neurotech/test-finger-2-curled.jpg', caption: 'Version 2 Finger Curled by Pulling the Tendon String' },
-            { src: 'neurotech/finger-1-vs-2.jpg', caption: 'Version 1 (Blue) vs. Version 2 (White) Finger, Back View' },
+            { src: 'neurotech/finger-1-vs-2.jpg', caption: 'Version 1 (Blue) vs. Version 2 (White) Finger, Back View\nVersion 2 Has Mechanical Stoppers and Appears More Human-Like' },
           ],
           centered: true,
         },

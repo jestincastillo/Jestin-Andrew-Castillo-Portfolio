@@ -631,6 +631,7 @@ code {
   margin-top: 8px;
   font-size: 0.85rem;
   color: var(--text-muted);
+  white-space: pre-line; /* a \n in a caption starts a new line */
 }
 
 .gallery--centered {
@@ -688,6 +689,7 @@ code {
   margin-top: 12px;
   color: #d3d7dc;
   font-size: 0.9rem;
+  white-space: pre-line;
 }
 
 .lightbox__count {

@@ -73,7 +73,10 @@ const neurotech = {
       paragraphs: [
         'Designed, conducted FEA analyses (WIP), and produced GD&T engineering drawings (TBD) in SolidWorks.',
       ],
-      images: [{ src: 'neurotech/cad-arm8.png', caption: 'Basic Forearm to Fingers Model' }],
+      images: [
+        { src: 'neurotech/cad-arm8.png', caption: 'Basic Forearm to Fingers Model' },
+        { src: 'neurotech/cad-arm9.png', caption: 'Full Arm Assembly on Its Rotating Base, Desk-Mounted Configuration' },
+      ],
       centered: true,
       subsections: [
         {
@@ -145,6 +148,9 @@ const neurotech = {
           images: [
             { src: 'neurotech/test-finger-uncurled.jpg', caption: 'Printed Tendon-Driven Finger on Palm Frame, Extended' },
             { src: 'neurotech/test-finger-curled.jpg', caption: 'Printed Finger Curled by Pulling the Tendon String' },
+            { src: 'neurotech/test-finger-2-uncurled.jpg', caption: 'Version 2 Finger (White) Beside Version 1 (Blue) on Palm Frame, Extended' },
+            { src: 'neurotech/test-finger-2-curled.jpg', caption: 'Version 2 Finger Curled by Pulling the Tendon String' },
+            { src: 'neurotech/finger-1-vs-2.jpg', caption: 'Version 1 (Blue) vs. Version 2 (White) Finger, Back View' },
           ],
           centered: true,
         },
